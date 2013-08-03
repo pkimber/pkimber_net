@@ -8,4 +8,16 @@ body {
 
 .header h1 {
     font-weight: 300;
+    border-bottom: 1px solid gray;
+    display: inline-block;
+}
+
+.header h1 span {
+    color: gray;
+    font-size: 20px;
+}
+
+.header h2 {
+    font-weight: 300;
+    font-size: 20px;
 }
