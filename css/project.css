@@ -24,3 +24,12 @@ h1, h2, h3, h4, h5 {
 .header h2 {
     font-size: 20px;
 }
+
+.l-hbox {
+    padding: 0 1.3em;
+}
+
+/* Apply the .box class on the immediate parent of any grid element (pure-u-*) to apply some padding. */
+.l-box {
+    padding: 1.3em;
+}
