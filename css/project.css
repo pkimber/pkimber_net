@@ -7,6 +7,12 @@ h1, h2, h3, h4, h5 {
     font-weight: 400;
 }
 
+/* The content div is placed as a wrapper around all the docs */
+.content {
+    margin: 0 auto;
+    width: 100%;
+}
+
 .header {
     text-align: center;
 }
