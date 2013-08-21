@@ -1,14 +1,103 @@
 {% extends "project/base.html" %}
+{% load staticfiles %}
 
 {% block title %}
   pkimber.net - Home
 {% endblock title %}
 
 {% block header %}
-  <h1>Testing</h1>
-  {{ block.super }}
+  <div class="hero">
+    <h1 class="pure-u-1">Patrick Kimber</h1>
+    <h2 class="pure-u-3-4 l-centered">
+      Contact me to chat about database powered web sites,
+      linux deployment, android mobile apps, full-text search and
+      software testing
+    </h2>
+  </div>
 {% endblock header %}
 
 {% block content %}
-  <p>Hello</p>
+  <div class="pure-g-r marketing-ribbon">
+    <div class="pure-u-1-2">
+      <div class="l-box">
+        <a href="/layouts/">
+          <img src="{% static "img/tree.png" %}" alt="Tree in my garden">
+        </a>
+      </div>
+    </div>
+    <div class="pure-u-1-2">
+      <div class="l-hbox">
+        <h3>Talk to me...</h3>
+        <p>
+          Do you want an updated database for your business?
+          Do you have data in an Excel spreadsheet or Access database?
+        </p>
+        <p>
+          We could move this data to a modern web application and help you
+          run your business more effectively.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="pure-g-r marketing-ribbon">
+    <div class="pure-u-1-2">
+      <div class="l-hbox">
+        <h3>Experience</h3>
+        <p>
+          I have years of experience writing commercial software for
+          business users.
+        </p>
+        <p>
+          <a href="{% url "project.portfolio" %}">
+            Click here to check out some of my previous work...
+          </a>
+        </p>
+      </div>
+    </div>
+    <div class="pure-u-1-2">
+      <div class="l-box">
+        <a href="/layouts/">
+          <img src="{% static "img/garden.png" %}" alt="Tree in my garden">
+        </a>
+      </div>
+    </div>
+  </div>
+
+<div class="legal pure-g-r">
+    <div class="pure-u-2-5">
+        <div class="l-box">
+            <p class="legal-license">
+                This site is built with &lt;3 using Pure v0.2.1
+            </p>
+            <p class="legal-license">
+                All code on this site is licensed under the <a href="http://yuilibrary.com/license/">BSD License</a> unless stated otherwise.
+            </p>
+        </div>
+    </div>
+
+    <div class="pure-u-1-5">
+        <div class="l-box legal-logo">
+            <a href="http://yuilibrary.com/">
+                <img height="30" width="65" alt="YUI logo" src="/img/logo-footer.png">
+            </a>
+        </div>
+    </div>
+
+    <div class="pure-u-2-5">
+        <div class="l-box">
+            <ul class="legal-links pure-g">
+                <li class="pure-u-1-2">
+                    <a href="https://github.com/yui/pure/">GitHub Project</a>
+                </li>
+                <li class="pure-u-1-2">
+                    <a href="http://yuilibrary.com/security/">Security Contact Info</a>
+                </li>
+            </ul>
+
+            <p class="legal-copyright">
+                &copy; 2013 Yahoo! Inc. All rights reserved.
+            </p>
+        </div>
+    </div>
+</div>
 {% endblock content %}
