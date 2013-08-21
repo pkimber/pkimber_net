@@ -1,0 +1,9 @@
+django-braces==0.2.3
+django-debug-toolbar
+django-reversion==1.7
+django==1.5.2
+docutils
+pillow
+psycopg2
+pyyaml
+south

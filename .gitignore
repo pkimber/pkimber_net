@@ -18,13 +18,15 @@ develop-eggs
 lib
 lib64
 
-# Installer logs
+# Installer
 pip-log.txt
+MANIFEST
 
 # Unit test / coverage reports
 .coverage
 .tox
 nosetests.xml
+temp.db
 
 # Translations
 *.mo
