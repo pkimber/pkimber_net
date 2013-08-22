@@ -8,10 +8,17 @@
   Patrick Kimber
 {% endblock heading %}
 
+
 {% block menu %}
-  <li><a href="{% url "project.portfolio" %}">Portfolio</a></li>
-  <li><a href="{% url "project.portfolio" %}">Technology</a></li>
-  <li><a href="{% url "project.portfolio" %}">Contact</a></li>
+  <li {% if 'portfolio' in path %}class="pure-menu-selected"{% endif %}>
+    <a href="{% url "project.portfolio" %}">Portfolio</a>
+  </li>
+  <li {% if 'technology' in path %}class="pure-menu-selected"{% endif %}>
+    <a href="{% url "project.technology" %}">Technology</a>
+  </li>
+  <li {% if 'contact' in path %}class="pure-menu-selected"{% endif %}>
+    <a href="{% url "project.contact" %}">Contact</a>
+  </li>
 {% endblock menu %}
 
 {% block footer %}
