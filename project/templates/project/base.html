@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load staticfiles %}
 
 {% block title %}
   pkimber.net
@@ -25,34 +26,62 @@
   <div class="legal pure-g-r">
     <div class="pure-u-2-5">
       <div class="l-box">
-        <p class="legal-license">
-          This site is built with &lt;3 using Pure v0.2.1
-        </p>
-        <p class="legal-license">
-          All code on this site is licensed under the <a href="http://yuilibrary.com/license/">BSD License</a> unless stated otherwise.
-        </p>
+        <a href="http://uk.linkedin.com/in/pkimber/">
+          <i class="icon-linkedin icon-3x"></i>
+        </a>
+        <a href="https://twitter.com/pkimber">
+          <i class="icon-twitter icon-3x"></i>
+        </a>
+        <a href="https://github.com/pkimber">
+          <i class="icon-github icon-3x"></i>
+        </a>
+        <a href="https://bitbucket.org/pkimber">
+          <i class="icon-bitbucket icon-3x"></i>
+        </a>
+        <a href="https://plus.google.com/101004446038482302587/about/p/pub">
+          <i class="icon-google-plus icon-3x"></i>
+        </a>
+        <a href="https://www.facebook.com/pkimber">
+          <i class="icon-facebook icon-3x"></i>
+        </a>
       </div>
     </div>
     <div class="pure-u-1-5">
       <div class="l-box legal-logo">
         <a href="http://yuilibrary.com/">
-          <img height="30" width="65" alt="YUI logo" src="/img/logo-footer.png">
+          <img height="30" width="65" alt="YUI logo" src="{% static "img/project/yui.png" %}">
         </a>
+        <p class="legal-license">
+          This site is built using
+          <a href="http://purecss.io/">
+            Yahoo Pure CSS
+          </a>
+
+
+        </p>
       </div>
     </div>
     <div class="pure-u-2-5">
       <div class="l-box">
         <ul class="legal-links pure-g">
-          <li class="pure-u-1-2">
-            <a href="https://github.com/yui/pure/">GitHub Project</a>
+          <li class="pure-u-1">
+            <strong>email </strong>
+            <a href="mailto:mail@pkimber.net">
+              mail@pkimber.net
+            </a>
           </li>
-          <li class="pure-u-1-2">
-            <a href="http://yuilibrary.com/security/">Security Contact Info</a>
+          <li class="pure-u-1">
+            <strong>mobile </strong>
+            07840 538 357
+          </li>
+          <li class="pure-u-1">
+            <strong>international </strong>
+            +44 7840 538 357
+          </li>
+          <li class="pure-u-1">
+            Hatherleigh, Okehampton, Devon, UK
           </li>
         </ul>
-        <p class="legal-copyright">
-          &copy; 2013 Yahoo! Inc. All rights reserved.
-        </p>
       </div>
     </div>
   </div>
