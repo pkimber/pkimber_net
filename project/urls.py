@@ -3,7 +3,9 @@ from django.conf.urls import patterns
 from django.conf.urls import url
 from django.contrib import admin
 
-from .views import HomeView, PortfolioView, SecureView, TechnologyView
+from .views import (
+    ContactView, HomeView, PortfolioView, SecureView, TechnologyView,
+)
 
 
 admin.autodiscover()
@@ -20,7 +22,7 @@ urlpatterns = patterns(
         name='project.home.user'
         ),
     url(regex=r'^me/contact/$',
-        view=PortfolioView.as_view(),
+        view=ContactView.as_view(),
         name='project.contact'
         ),
     url(regex=r'^me/portfolio/$',
