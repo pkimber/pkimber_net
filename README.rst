@@ -71,3 +71,8 @@ Usage
   django-admin.py migrate --all --noinput
   django-admin.py demo_data_login
   django-admin.py runserver
+
+Release and Deploy
+==================
+
+https://github.com/pkimber/cloud_docs
