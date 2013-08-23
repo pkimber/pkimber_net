@@ -1,0 +1,10 @@
+recursive-include project/static *
+recursive-include project/templates *
+
+include LICENSE
+include manage.py
+include README
+include requirements/*.txt
+include *.txt
+
+prune example/
