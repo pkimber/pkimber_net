@@ -39,4 +39,4 @@ LOGGING = {
 }
 
 # Django debug toolbar (this is the address of the client not the server)
-INTERNAL_IPS = ('127.0.0.1',)
+# INTERNAL_IPS = ('127.0.0.1',)
