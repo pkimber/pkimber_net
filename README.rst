@@ -75,4 +75,4 @@ Usage
 Release and Deploy
 ==================
 
-https://github.com/pkimber/cloud_docs
+https://github.com/pkimber/docs_cloud
