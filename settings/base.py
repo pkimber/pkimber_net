@@ -144,6 +144,7 @@ INSTALLED_APPS = (
     # 'django.contrib.admindocs',
     # 'django_extensions',
     # 'debug_toolbar',
+    'haystack',
     'reversion',
     'south',
     'project',
@@ -160,3 +161,11 @@ LOGIN_REDIRECT_URL = reverse_lazy('project.home')
 # must be logged in before accessing the view otherwise this URL
 # will be called.
 LOGIN_URL = reverse_lazy('login.login')
+
+# This project is not using Haystack/SOLR, but the cron task will still be
+# running... so just install the simple engine.
+HAYSTACK_CONNECTIONS = {
+    'default': {
+        'ENGINE': 'haystack.backends.simple_backend.SimpleEngine',
+    },
+}
