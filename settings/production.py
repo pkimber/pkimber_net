@@ -54,10 +54,5 @@ MEDIA_ROOT = get_env_variable("MEDIA_ROOT")
 # http://nemesisdesign.net/blog/coding/django-private-file-upload-and-serving/
 MEDIA_ROOT_PRIVATE = get_env_variable("MEDIA_ROOT_PRIVATE")
 
-# URL that handles the media served from MEDIA_ROOT. Make sure to use a
-# trailing slash.
-# Examples: "http://media.lawrence.com/media/", "http://example.com/media/"
-MEDIA_URL = ''
-
 # Django debug toolbar (this is the address of the client not the server)
 # INTERNAL_IPS = ('87.115.141.255',)
