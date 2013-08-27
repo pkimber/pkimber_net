@@ -45,5 +45,19 @@ LOGGING = {
     }
 }
 
+# Absolute filesystem path to the directory that will hold user-uploaded files.
+# Example: "/home/media/media.lawrence.com/media/"
+MEDIA_ROOT = get_env_variable("MEDIA_ROOT")
+
+# We want attachments to be stored in a private location and NOT available to
+# the world at a public URL.  The idea for this came from:
+# http://nemesisdesign.net/blog/coding/django-private-file-upload-and-serving/
+MEDIA_ROOT_PRIVATE = get_env_variable("MEDIA_ROOT_PRIVATE")
+
+# URL that handles the media served from MEDIA_ROOT. Make sure to use a
+# trailing slash.
+# Examples: "http://media.lawrence.com/media/", "http://example.com/media/"
+MEDIA_URL = ''
+
 # Django debug toolbar (this is the address of the client not the server)
 # INTERNAL_IPS = ('87.115.141.255',)
