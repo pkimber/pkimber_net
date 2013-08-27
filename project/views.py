@@ -17,8 +17,15 @@ class ContactView(ProjectMixin, TemplateView):
     template_name = 'project/contact.html'
 
 
-class HomeView(ProjectMixin, TemplateView):
-    template_name = 'project/home.html'
+class HomeView(ProjectMixin, ListView):
+    queryset = Simple.objects.filter(
+        moderated=True,
+        section__name='home',
+    ).order_by(
+        'order',
+        'modified',
+    )
+    template_name = 'project/home_list.html'
 
 
 class PortfolioView(ProjectMixin, ListView):

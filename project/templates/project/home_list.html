@@ -12,52 +12,39 @@
 {% endblock sub_heading %}
 
 {% block content %}
-  <div class="pure-g-r marketing-ribbon">
-    <div class="pure-u-1-2">
-      <div class="l-box">
-        <a href="/layouts/">
-          <img src="{% static "img/project/cow.png" %}" alt="Dairy Farming">
-        </a>
+  {% for story in simple_list %}
+    {% if forloop.counter|divisibleby:"2" %}
+      <div class="pure-g-r marketing-ribbon">
+        <div class="pure-u-1-2">
+          <div class="l-box">
+            <a href="{{ story.url }}">
+              <img src="{{ MEDIA_URL}}{{ story.picture }}" alt="{{ story.title }}">
+            </a>
+          </div>
+        </div>
+        <div class="pure-u-1-2">
+          <div class="l-hbox">
+            <h3>{{ story.title }}</h3>
+            {{ story.description|safe }}
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="pure-u-1-2">
-      <div class="l-hbox">
-        <h3>Talk to me...</h3>
-        <p>
-          Do you want a database for your business?
-          Do you have data locked in an Excel spreadsheet or an old Access database?
-        </p>
-        <p>
-          I could help you move this data to a modern web application.
-        </p>
-        <p>
-          Sharing information will allow your staff, customers and suppliers to work together
-          more effectively.
-        </p>
+    {% else %}
+      <div class="pure-g-r marketing-ribbon">
+        <div class="pure-u-1-2">
+          <div class="l-hbox">
+            <h3>{{ story.title }}</h3>
+            {{ story.description|safe }}
+          </div>
+        </div>
+        <div class="pure-u-1-2">
+          <div class="l-box">
+            <a href="{{ story.url }}">
+              <img src="{{ MEDIA_URL}}{{ story.picture }}" alt="{{ story.title }}">
+            </a>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-  <div class="pure-g-r marketing-ribbon">
-    <div class="pure-u-1-2">
-      <div class="l-hbox">
-        <h3>Experience</h3>
-        <p>
-          I have years of experience writing commercial software for
-          business users.
-        </p>
-        <p>
-          <a href="{% url "project.portfolio" %}">
-            Click here to check out some of my previous work...
-          </a>
-        </p>
-      </div>
-    </div>
-    <div class="pure-u-1-2">
-      <div class="l-box">
-        <a href="/layouts/">
-          <img src="{% static "img/project/garden.png" %}" alt="Tree in my garden">
-        </a>
-      </div>
-    </div>
-  </div>
+    {% endif %}
+  {% endfor %}
 {% endblock content %}
