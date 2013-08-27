@@ -10,184 +10,43 @@
 {% endblock sub_heading %}
 
 {% block content %}
-  <div class="pure-g-r marketing-ribbon">
-    <div class="pure-u-1-2">
-      <div class="l-box">
-        <a href="https://connexionsw.com/">
-          <img src="{% static "img/project/connexionsw.png" %}" alt="Connexion Software Ltd">
-        </a>
+  {% for story in simple_list %}
+    {% if forloop.counter|divisibleby:"2" %}
+      <div class="pure-g-r marketing-ribbon">
+        <div class="pure-u-1-2">
+          <div class="l-box">
+            <a href="{{ story.url }}">
+              <img src="{{ MEDIA_URL}}{{ story.picture }}" alt="{{ story.title }}">
+            </a>
+          </div>
+        </div>
+        <div class="pure-u-1-2">
+          <div class="l-hbox">
+            <h3>
+              <a href="{{ story.url }}">{{ story.title }}</a>
+            </h3>
+            {{ story.description }}
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="pure-u-1-2">
-      <div class="l-hbox">
-        <h3>
-          <a href="https://connexionsw.com/">Customer Relationship</a>
-        </h3>
-        <p>
-          Design and build of a customised CRM system for 
-          <a href="https://connexionsw.com/">Connexion Software</a>
-        </p>
-        <p>
-          Hosting high performance web applications on
-          <a href="http://www.rackspace.co.uk/">RackSpace</a>
-          cloud servers.
-        </p>
+    {% else %}
+      <div class="pure-g-r marketing-ribbon">
+        <div class="pure-u-1-2">
+          <div class="l-hbox">
+            <h3>
+              <a href="{{ story.url }}">{{ story.title }}</a>
+            </h3>
+            {{ story.description }}
+          </div>
+        </div>
+        <div class="pure-u-1-2">
+          <div class="l-box">
+            <a href="{{ story.url }}">
+              <img src="{{ MEDIA_URL}}{{ story.picture }}" alt="{{ story.title }}">
+            </a>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-  <div class="pure-g-r marketing-ribbon">
-    <div class="pure-u-1-2">
-      <div class="l-hbox">
-        <h3>
-          <a href="http://www.dounreay.com/">
-            Nuclear Waste Tracking
-          </a>
-        </h3>
-        <p>
-          Design, installation and maintenance of nuclear waste tracking and management systems.
-        </p>
-      </div>
-    </div>
-    <div class="pure-u-1-2">
-      <div class="l-box">
-        <a href="http://www.dounreay.com/">
-          <img src="{% static "img/project/dounreay.png" %}" alt="Dounreay Site Restoration Limited (DSRL)">
-        </a>
-      </div>
-    </div>
-  </div>
-  <div class="pure-g-r marketing-ribbon">
-    <div class="pure-u-1-2">
-      <div class="l-box">
-        <a href="http://www.gossinteractive.com/">
-          <img src="{% static "img/project/goss.png" %}" alt="Goss Interactive">
-        </a>
-      </div>
-    </div>
-    <div class="pure-u-1-2">
-      <div class="l-hbox">
-        <h3>
-          <a href="http://www.gossinteractive.com/">
-            Content Management
-          </a>
-        </h3>
-        <p>
-          Working on a team building a web content management system at
-          <a href="http://www.gossinteractive.com/">GOSS Interactive</a>.
-          The system is in use
-          <a href="http://www.gossinteractive.com/clients/">at many well know organisations</a>.
-        </p>
-        <p>
-          Document search using the
-          <a href="http://lucene.apache.org/">
-            Lucene search engine
-          </a>
-          on Java and .NET.
-        </p>
-      </div>
-    </div>
-  </div>
-  <div class="pure-g-r marketing-ribbon">
-    <div class="pure-u-1-2">
-      <div class="l-hbox">
-        <h3>
-          <a href="http://www.eigenlabs.com/">
-            Information System and ecommerce
-          </a>
-        </h3>
-        <p>
-          MIS programming for
-          <a href="http://www.eigenlabs.com/">eigenlabs</a> - a start-up
-          company building "the most expressive electronic instrument ever
-          made".
-        </p>
-        <p>
-          On-line shop and web site.
-          Integration and maintenance of the 
-          <a href="https://www.openerp.com/">OpenERP</a> accounts and
-          manufacturing solution.
-        </p>
-      </div>
-    </div>
-    <div class="pure-u-1-2">
-      <div class="l-box">
-        <a href="http://www.eigenlabs.com/">
-          <img src="{% static "img/project/alpha-big4.png" %}" alt="eigenlabs">
-        </a>
-      </div>
-    </div>
-  </div>
-  <div class="pure-g-r marketing-ribbon">
-    <div class="pure-u-1-2">
-      <div class="l-box">
-        <img src="{% static "img/project/walkers.png" %}" alt="Jigsaw">
-      </div>
-    </div>
-    <div class="pure-u-1-2">
-      <div class="l-hbox">
-        <h3>
-          Walkers Crisps
-        </h3>
-        <p>
-          Entry to 
-          <a href="http://www.walkers.co.uk/">Walkers</a>
-          competitions using web and text message.
-        </p>
-        <p>
-          Massive mailing lists following best marketing practice.
-          Support - 24 hours a day.
-        </p>
-      </div>
-    </div>
-  </div>
-  <div class="pure-g-r marketing-ribbon">
-    <div class="pure-u-1-2">
-      <div class="l-hbox">
-        <h3>
-          <a href="http://www.cognitosoftware.com/">
-            Software for Solicitors
-          </a>
-        </h3>
-        <p>
-          Law Society approved legal software solutions for solicitors at
-          <a href="http://www.cognitosoftware.com/">Cognito Software Ltd</a>.
-        </p>
-        <p>
-          Time recording, case management,
-          document assembly, document storage, marketing and accounts.
-        </p>
-      </div>
-    </div>
-    <div class="pure-u-1-2">
-      <div class="l-box">
-        <a href="http://www.cognitosoftware.com/">
-          <img src="{% static "img/project/hotdocs.png" %}" alt="Cognito Software Ltd">
-        </a>
-      </div>
-    </div>
-  </div>
-  <div class="pure-g-r marketing-ribbon">
-    <div class="pure-u-1-2">
-      <div class="l-box">
-        <img src="{% static "img/project/cow.png" %}" alt="Dairy Farmer">
-      </div>
-    </div>
-    <div class="pure-u-1-2">
-      <div class="l-hbox">
-        <h3>
-          Dairy Farmer
-        </h3>
-        <p>
-          Programming in
-          <a href="http://en.wikipedia.org/wiki/BBC_BASIC">BBC BASIC</a>
-          and DBase
-          <a href="http://en.wikipedia.org/wiki/XBase">(dbxl)</a>.
-        </p>
-        <p>
-          Accounts, feed rations, milking cows, driving a tractor, making
-          hay and building a barn.
-        </p>
-      </div>
-    </div>
-  </div>
+    {% endif %}
+  {% endfor %}
 {% endblock content %}
