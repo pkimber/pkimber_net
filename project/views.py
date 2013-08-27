@@ -1,4 +1,6 @@
-from django.views.generic import TemplateView
+from django.views.generic import ListView, TemplateView
+
+from cms.models import Simple
 
 
 class ProjectMixin(object):
@@ -27,5 +29,12 @@ class SecureView(ProjectMixin, TemplateView):
     template_name = 'project/secure.html'
 
 
-class TechnologyView(ProjectMixin, TemplateView):
-    template_name = 'project/technology.html'
+class TechnologyView(ProjectMixin, ListView):
+    queryset = Simple.objects.filter(
+        moderated=True,
+        section__name='tech',
+    ).order_by(
+        'order',
+        'modified',
+    )
+    template_name = 'project/technology_list.html'
