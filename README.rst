@@ -24,6 +24,7 @@ has been created for you).
   echo "unset SECRET_KEY" >> $VIRTUAL_ENV/bin/postdeactivate
 
   add2virtualenv ../../app/base
+  add2virtualenv ../../app/cms
   add2virtualenv ../../app/login
   add2virtualenv .
   deactivate
@@ -42,6 +43,7 @@ Check the imports are in the correct order e.g:
 
   /home/patrick/repo/dev/project/patrick_net
   /home/patrick/repo/dev/app/login
+  /home/patrick/repo/dev/app/cms
   /home/patrick/repo/dev/app/base
 
 Testing
@@ -69,6 +71,7 @@ Usage
   workon dev_patrick_net
   django-admin.py syncdb --noinput
   django-admin.py migrate --all --noinput
+  django-admin.py demo_data_cms
   django-admin.py demo_data_login
   django-admin.py runserver
 
