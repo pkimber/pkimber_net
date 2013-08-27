@@ -25,7 +25,7 @@
             <h3>
               <a href="{{ story.url }}">{{ story.title }}</a>
             </h3>
-            {{ story.description }}
+            {{ story.description|safe }}
           </div>
         </div>
       </div>
@@ -36,7 +36,7 @@
             <h3>
               <a href="{{ story.url }}">{{ story.title }}</a>
             </h3>
-            {{ story.description }}
+            {{ story.description|safe }}
           </div>
         </div>
         <div class="pure-u-1-2">
