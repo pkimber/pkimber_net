@@ -131,4 +131,24 @@
       </div>
     </div>
   </div>
+
+  {% for story in simple_list %}
+    <div class="pure-g-r marketing-ribbon">
+      <div class="pure-u-1-4">
+        <div class="l-box">
+          <a href="{{ story.url }}">
+            <img src="{{ MEDIA_URL}}{{ story.picture }}" alt="Android">
+          </a>
+        </div>
+      </div>
+      <div class="pure-u-3-4">
+        <div class="l-hbox">
+          <h3>{{ story.title }}</h3>
+          <p>
+            {{ story.description }}
+          </p>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
 {% endblock content %}
