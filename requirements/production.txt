@@ -1,4 +1,4 @@
 -r base.txt
-pkimber-base==0.0.16
+pkimber-base==0.0.17
 pkimber-cms==0.0.03
 pkimber-login==0.0.04
