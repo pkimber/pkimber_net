@@ -6,7 +6,10 @@ from django.conf.urls.static import static
 from django.contrib import admin
 
 from .views import (
-    ContactView, HomeView, PortfolioView, SecureView, TechnologyView,
+    ContactView,
+    HomeView,
+    PortfolioView,
+    TechnologyView,
 )
 
 
@@ -18,10 +21,6 @@ urlpatterns = patterns(
     url(regex=r'^$',
         view=HomeView.as_view(),
         name='project.home'
-        ),
-    url(regex=r'^home/user/$',
-        view=SecureView.as_view(),
-        name='project.home.user'
         ),
     url(regex=r'^me/contact/$',
         view=ContactView.as_view(),
@@ -40,6 +39,12 @@ urlpatterns = patterns(
         ),
     url(regex=r'^admin/',
         view=include(admin.site.urls)
+        ),
+    url(regex=r'^crm/',
+        view=include('crm.urls')
+        ),
+    url(regex=r'^invoice/',
+        view=include('invoice.urls')
         ),
 ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 #   ^ helper function to return a URL pattern for serving files in debug mode.

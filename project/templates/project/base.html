@@ -19,9 +19,26 @@
   <li>
     <a href="/howto/">My Memory</a>
   </li>
-  <li {% if 'contact' in path %}class="pure-menu-selected"{% endif %}>
+  <li {% if 'crm' in path %}class="pure-menu-selected"{% endif %}
+    {% if 'invoice' in path %}class="pure-menu-selected"{% endif %}
+    {% if 'login' in path %}class="pure-menu-selected"{% endif %}
+    >
+    <a href="{% url "crm.ticket.home" %}">
+      {% if user.is_authenticated %}
+        CRM
+      {% else %}
+        Login
+      {% endif %}
+    </a>
+  </li>
+  <li {% if 'me/contact' in path %}class="pure-menu-selected"{% endif %}>
     <a href="{% url "project.contact" %}">Contact</a>
   </li>
+  {% if user.is_authenticated %}
+    <li>
+      <a href="{% url "logout" %}">Logout</a>
+    </li>
+  {% endif %}
 {% endblock menu %}
 
 {% block footer %}

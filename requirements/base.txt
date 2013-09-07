@@ -6,4 +6,5 @@ docutils
 pillow
 psycopg2
 pyyaml
+reportlab
 south

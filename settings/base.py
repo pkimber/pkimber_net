@@ -155,6 +155,8 @@ INSTALLED_APPS = (
     'project',
     'base',
     'cms',
+    'crm',
+    'invoice',
     'login',
 )
 
@@ -165,7 +167,7 @@ LOGIN_REDIRECT_URL = reverse_lazy('project.home')
 # Login URL. Used with login_required decorators when a user
 # must be logged in before accessing the view otherwise this URL
 # will be called.
-LOGIN_URL = reverse_lazy('login.login')
+# LOGIN_URL = reverse_lazy('login.login')
 
 # This project is not using Haystack/SOLR, but the cron task will still be
 # running... so just install the simple engine.
