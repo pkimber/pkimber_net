@@ -23,9 +23,11 @@ has been created for you).
   echo "export SECRET_KEY=\"the_secret_key\"" >> $VIRTUAL_ENV/bin/postactivate
   echo "unset SECRET_KEY" >> $VIRTUAL_ENV/bin/postdeactivate
 
-  add2virtualenv ../../app/base
-  add2virtualenv ../../app/cms
   add2virtualenv ../../app/login
+  add2virtualenv ../../app/invoice
+  add2virtualenv ../../app/crm
+  add2virtualenv ../../app/cms
+  add2virtualenv ../../app/base
   add2virtualenv .
   deactivate
 
@@ -41,10 +43,12 @@ Check the imports are in the correct order e.g:
 
 ::
 
-  /home/patrick/repo/dev/project/patrick_net
-  /home/patrick/repo/dev/app/login
-  /home/patrick/repo/dev/app/cms
+  /home/patrick/repo/dev/project/pkimber_net
   /home/patrick/repo/dev/app/base
+  /home/patrick/repo/dev/app/cms
+  /home/patrick/repo/dev/app/crm
+  /home/patrick/repo/dev/app/invoice
+  /home/patrick/repo/dev/app/login
 
 Testing
 -------
@@ -69,11 +73,16 @@ Usage
 ::
 
   workon dev_patrick_net
-  django-admin.py syncdb --noinput
-  django-admin.py migrate --all --noinput
-  django-admin.py demo_data_cms
-  django-admin.py demo_data_login
-  django-admin.py runserver
+
+  py.test -x && \
+      touch temp.db && rm temp.db && \
+      django-admin.py syncdb --noinput && \
+      django-admin.py migrate --all --noinput && \
+      django-admin.py demo_data_login && \
+      django-admin.py demo_data_cms && \
+      django-admin.py demo_data_crm && \
+      django-admin.py demo_data_invoice && \
+      django-admin.py runserver
 
 Release and Deploy
 ==================
