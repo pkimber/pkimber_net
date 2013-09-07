@@ -6,7 +6,6 @@ TEMPLATE_DEBUG = DEBUG
 SESSION_COOKIE_SECURE = False
 CSRF_COOKIE_SECURE = False
 
-CRISPY_FAIL_SILENTLY = False
 TEMPLATE_STRING_IF_INVALID = '**** INVALID EXPRESSION: %s ****'
 
 # A sample logging configuration. The only tangible logging
