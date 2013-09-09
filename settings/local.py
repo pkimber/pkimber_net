@@ -40,5 +40,11 @@ LOGGING = {
 # https://docs.djangoproject.com/en/1.5/howto/static-files/#serving-files-uploaded-by-a-user
 MEDIA_ROOT = 'media'
 
+# See 'production.py'
+MEDIA_ROOT_PRIVATE = 'media-private'
+
 # Django debug toolbar (this is the address of the client not the server)
 # INTERNAL_IPS = ('127.0.0.1',)
+
+# https://github.com/johnsensible/django-sendfile
+SENDFILE_BACKEND = 'sendfile.backends.development'

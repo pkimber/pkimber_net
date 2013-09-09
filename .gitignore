@@ -28,6 +28,7 @@ MANIFEST
 nosetests.xml
 temp.db
 media
+media-private
 
 # Translations
 *.mo

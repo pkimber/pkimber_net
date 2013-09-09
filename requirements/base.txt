@@ -1,6 +1,7 @@
 django-braces==1.2.2
 django-haystack==2.1.0
 django-reversion==1.7
+django-sendfile
 django==1.5.2
 docutils
 pillow

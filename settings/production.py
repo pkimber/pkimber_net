@@ -54,5 +54,11 @@ MEDIA_ROOT = get_env_variable("MEDIA_ROOT")
 # http://nemesisdesign.net/blog/coding/django-private-file-upload-and-serving/
 MEDIA_ROOT_PRIVATE = get_env_variable("MEDIA_ROOT_PRIVATE")
 
+# https://github.com/johnsensible/django-sendfile
+SENDFILE_BACKEND = 'sendfile.backends.nginx'
+SENDFILE_ROOT = get_env_variable("SENDFILE_ROOT")
+SENDFILE_URL = '/private'
+
 # Django debug toolbar (this is the address of the client not the server)
 # INTERNAL_IPS = ('87.115.141.255',)
+
