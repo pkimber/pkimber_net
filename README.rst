@@ -88,3 +88,11 @@ Release and Deploy
 ==================
 
 https://github.com/pkimber/docs_cloud
+
+Backup
+======
+
+::
+
+  fab -H rex.pkimber.net backup_files
+  fab -H rex.pkimber.net backup_db:pkimber_net
