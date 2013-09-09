@@ -24,21 +24,12 @@
     {% if 'login' in path %}class="pure-menu-selected"{% endif %}
     >
     <a href="{% url "crm.ticket.home" %}">
-      {% if user.is_authenticated %}
-        CRM
-      {% else %}
-        Login
-      {% endif %}
+      CRM
     </a>
   </li>
   <li {% if 'me/contact' in path %}class="pure-menu-selected"{% endif %}>
     <a href="{% url "project.contact" %}">Contact</a>
   </li>
-  {% if user.is_authenticated %}
-    <li>
-      <a href="{% url "logout" %}">Logout</a>
-    </li>
-  {% endif %}
 {% endblock menu %}
 
 {% block footer %}
