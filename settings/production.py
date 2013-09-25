@@ -30,17 +30,38 @@ LOGGING = {
         },
     },
     'handlers': {
-        'stderr': {
-            'level': 'INFO',
-            'class': 'logging.StreamHandler',
+        'null': {
+            'level':'DEBUG',
+                'class':'django.utils.log.NullHandler',
+        },
+        'logfile': {
+            'level':'DEBUG',
+            'class':'logging.handlers.RotatingFileHandler',
+            'filename': "logfile",
+            'maxBytes': 50000,
+            'backupCount': 2,
             'formatter': 'standard',
+        },
+        'console':{
+            'level':'INFO',
+            'class':'logging.StreamHandler',
+            'formatter': 'standard'
         },
     },
     'loggers': {
-        '': {
-            'handlers': ['stderr'],
-            'level': 'WARNING',
+        'django': {
+            'handlers':['console'],
             'propagate': True,
+            'level':'WARN',
+        },
+        'django.db.backends': {
+            'handlers': ['console'],
+            'level': 'DEBUG',
+            'propagate': False,
+        },
+        '': {
+            'handlers': ['console', 'logfile'],
+            'level': 'DEBUG',
         },
     }
 }
