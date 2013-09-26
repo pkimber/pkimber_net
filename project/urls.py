@@ -37,6 +37,9 @@ urlpatterns = patterns(
     url(regex=r'^',
         view=include('login.urls')
         ),
+    url(regex=r'^accounts/',
+        view=include('registration.backends.default.urls')
+        ),
     url(regex=r'^admin/',
         view=include(admin.site.urls)
         ),

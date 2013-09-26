@@ -143,13 +143,12 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # Uncomment the next line to enable the admin:
-    'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
     # 'django_extensions',
     # 'debug_toolbar',
     'haystack',
+    'registration',
     'reversion',
     'south',
     'project',
@@ -158,6 +157,8 @@ INSTALLED_APPS = (
     'crm',
     'invoice',
     'login',
+    # admin after login, so we prefer login templates
+    'django.contrib.admin',
 )
 
 # URL where requests are redirected after login when the contrib.auth.login
@@ -176,3 +177,6 @@ HAYSTACK_CONNECTIONS = {
         'ENGINE': 'haystack.backends.simple_backend.SimpleEngine',
     },
 }
+
+# django-registration
+ACCOUNT_ACTIVATION_DAYS = 7
