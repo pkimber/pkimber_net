@@ -77,3 +77,8 @@ SENDFILE_URL = '/private'
 
 # Django debug toolbar (this is the address of the client not the server)
 # INTERNAL_IPS = ('87.115.141.255',)
+
+# django-mailgun
+EMAIL_BACKEND = 'django_mailgun.MailgunBackend'
+MAILGUN_ACCESS_KEY = get_env_variable("MAILGUN_ACCESS_KEY")
+MAILGUN_SERVER_NAME = get_env_variable("MAILGUN_SERVER_NAME")
