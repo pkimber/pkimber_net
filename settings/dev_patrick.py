@@ -3,7 +3,7 @@ from .local import *
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'pkimber_net_20130926_170320_patrick',
+        'NAME': 'test_pkimber_net_patrick',
         'USER': 'patrick',
         'PASSWORD': '',
         'HOST': '',
