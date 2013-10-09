@@ -15,7 +15,7 @@ DATABASES = {
         'NAME': SITE_NAME,                                      # Or path to database file if using sqlite3.
         'USER': SITE_NAME,                                      # Not used with sqlite3.
         'PASSWORD': get_env_variable('DB_PASS'),                # Not used with sqlite3.
-        'HOST': '',                                             # Set to empty string for localhost. Not used with sqlite3.
+        'HOST': get_env_variable('DB_IP'),                      # Set to empty string for localhost. Not used with sqlite3.
         'PORT': '',                                             # Set to empty string for default. Not used with sqlite3.
     }
 }
