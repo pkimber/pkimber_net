@@ -84,6 +84,16 @@ Usage
       django-admin.py demo_data_invoice && \
       django-admin.py runserver
 
+If using test Postgre data downloaded from the live site::
+
+  workon dev_patrick_net
+
+  py.test -x && \
+      django-admin.py syncdb --noinput && \
+      django-admin.py migrate --all --noinput && \
+      django-admin.py runserver
+
+
 Release and Deploy
 ==================
 
