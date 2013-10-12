@@ -31,7 +31,7 @@ setup(
             'templates/project/*.*',
         ],
     },
-    version='0.0.31',
+    version='0.0.32',
     description='my web site',
     author='Patrick Kimber',
     author_email='code@pkimber.net',
