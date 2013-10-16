@@ -11,58 +11,12 @@ ALLOWED_HOSTS = [get_env_variable('DOMAIN'), ]
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',     # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': SITE_NAME,                                      # Or path to database file if using sqlite3.
-        'USER': SITE_NAME,                                      # Not used with sqlite3.
-        'PASSWORD': get_env_variable('DB_PASS'),                # Not used with sqlite3.
-        'HOST': get_env_variable('DB_IP'),                      # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': '',                                             # Set to empty string for default. Not used with sqlite3.
-    }
-}
-
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': True,
-    'formatters': {
-        'standard': {
-            'format': "[%(asctime)s] %(levelname)s [%(name)s:%(lineno)s] %(message)s",
-            'datefmt': "%d/%b/%Y %H:%M:%S"
-        },
-    },
-    'handlers': {
-        'null': {
-            'level':'DEBUG',
-                'class':'django.utils.log.NullHandler',
-        },
-        'logfile': {
-            'level':'DEBUG',
-            'class':'logging.handlers.RotatingFileHandler',
-            'filename': "logfile",
-            'maxBytes': 50000,
-            'backupCount': 2,
-            'formatter': 'standard',
-        },
-        'console':{
-            'level':'INFO',
-            'class':'logging.StreamHandler',
-            'formatter': 'standard'
-        },
-    },
-    'loggers': {
-        'django': {
-            'handlers':['console'],
-            'propagate': True,
-            'level':'WARN',
-        },
-        'django.db.backends': {
-            'handlers': ['console'],
-            'level': 'DEBUG',
-            'propagate': False,
-        },
-        '': {
-            'handlers': ['console', 'logfile'],
-            'level': 'DEBUG',
-        },
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': SITE_NAME,
+        'USER': SITE_NAME,
+        'PASSWORD': get_env_variable('DB_PASS'),
+        'HOST': get_env_variable('DB_IP'),
+        'PORT': '',
     }
 }
 

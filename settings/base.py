@@ -25,7 +25,8 @@ def get_env_variable(key):
 def get_env_variable_bool(key):
     """
     Retrieves env vars and makes Python boolean replacements
-    Copied from http://www.wellfireinteractive.com/blog/easier-12-factor-django/
+    Copied from:
+    http://www.wellfireinteractive.com/blog/easier-12-factor-django/
     """
     result = get_env_variable(key)
     if result == 'True':
@@ -33,7 +34,8 @@ def get_env_variable_bool(key):
     elif result == 'False':
         result = False
     else:
-        error_msg = "The {} variable must be set to 'True' or 'False': {}".format(key, result)
+        error_msg = "The {} variable must be set to 'True' or "
+        "'False': {}".format(key, result)
         print 'ImproperlyConfigured: {}'.format(error_msg)
         raise ImproperlyConfigured(error_msg)
     return result
@@ -131,7 +133,8 @@ ROOT_URLCONF = 'project.urls'
 WSGI_APPLICATION = 'project.wsgi.application'
 
 TEMPLATE_DIRS = (
-    # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
+    # Put strings here, like "/home/html/django_templates"
+    # or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
 )
@@ -180,3 +183,49 @@ HAYSTACK_CONNECTIONS = {
 
 # django-registration
 ACCOUNT_ACTIVATION_DAYS = 7
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': True,
+    'formatters': {
+        'standard': {
+            'format': "[%(asctime)s] %(levelname)s [%(name)s:%(lineno)s] %(message)s",
+            'datefmt': "%d/%b/%Y %H:%M:%S"
+        },
+    },
+    'handlers': {
+        'null': {
+            'level':'DEBUG',
+                'class':'django.utils.log.NullHandler',
+        },
+        'logfile': {
+            'level':'DEBUG',
+            'class':'logging.handlers.RotatingFileHandler',
+            'filename': "logfile",
+            'maxBytes': 50000,
+            'backupCount': 2,
+            'formatter': 'standard',
+        },
+        'console':{
+            'level':'INFO',
+            'class':'logging.StreamHandler',
+            'formatter': 'standard'
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers':['console'],
+            'propagate': True,
+            'level':'WARN',
+        },
+        'django.db.backends': {
+            'handlers': ['console'],
+            'level': 'DEBUG',
+            'propagate': False,
+        },
+        '': {
+            'handlers': ['console', 'logfile'],
+            'level': 'DEBUG',
+        },
+    }
+}
