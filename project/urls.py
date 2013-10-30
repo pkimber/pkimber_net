@@ -49,6 +49,8 @@ urlpatterns = patterns(
     url(regex=r'^invoice/',
         view=include('invoice.urls')
         ),
-) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+)
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 #   ^ helper function to return a URL pattern for serving files in debug mode.
 # https://docs.djangoproject.com/en/1.5/howto/static-files/#serving-files-uploaded-by-a-user

@@ -84,7 +84,7 @@ Usage
       django-admin.py demo_data_invoice && \
       django-admin.py runserver
 
-If using test Postgre data downloaded from the live site::
+If using test Postgres data downloaded from the live site::
 
   workon dev_patrick_net
 
@@ -93,16 +93,7 @@ If using test Postgre data downloaded from the live site::
       django-admin.py migrate --all --noinput && \
       django-admin.py runserver
 
-
 Release and Deploy
 ==================
 
-https://github.com/pkimber/docs_cloud
-
-Backup
-======
-
-::
-
-  fab -H rex.pkimber.net backup_files
-  fab -H rex.pkimber.net backup_db:pkimber_net
+https://github.com/pkimber/docs
