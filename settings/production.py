@@ -20,6 +20,9 @@ DATABASES = {
     }
 }
 
+# FTP upload 'static' folder
+FTP_STATIC_DIR = get_env_variable('FTP_STATIC_DIR')
+
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/media/"
 MEDIA_ROOT = get_env_variable("MEDIA_ROOT")
