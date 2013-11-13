@@ -24,13 +24,14 @@ setup(
     package_data={
         'project': [
             'static/*.*',
+            'static/ico/*.*',
             'static/img/*.*',
             'static/img/project/*.*',
             'templates/*.*',
             'templates/project/*.*',
         ],
     },
-    version='0.0.33',
+    version='0.0.34',
     description='my web site',
     author='Patrick Kimber',
     author_email='code@pkimber.net',
