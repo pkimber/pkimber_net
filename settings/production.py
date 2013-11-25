@@ -7,7 +7,7 @@ if get_env_variable_bool('SSL'):
     SESSION_COOKIE_SECURE = True
     CSRF_COOKIE_SECURE = True
 
-ALLOWED_HOSTS = [get_env_variable('DOMAIN'), ]
+ALLOWED_HOSTS = [get_env_variable('ALLOWED_HOSTS'), ]
 
 DATABASES = {
     'default': {
