@@ -8,6 +8,10 @@ CSRF_COOKIE_SECURE = False
 
 TEMPLATE_STRING_IF_INVALID = '**** INVALID EXPRESSION: %s ****'
 
+# FTP upload 'static' folder
+FTP_STATIC_DIR = None
+FTP_STATIC_URL = None
+
 # https://docs.djangoproject.com/en/1.5/howto/static-files/#serving-files-uploaded-by-a-user
 MEDIA_ROOT = 'media'
 
