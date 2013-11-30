@@ -149,7 +149,6 @@ INSTALLED_APPS = (
     # 'django_extensions',
     # 'debug_toolbar',
     'haystack',
-    'registration',
     'reversion',
     'south',
     'project',
@@ -178,9 +177,6 @@ HAYSTACK_CONNECTIONS = {
         'ENGINE': 'haystack.backends.simple_backend.SimpleEngine',
     },
 }
-
-# django-registration
-ACCOUNT_ACTIVATION_DAYS = 7
 
 LOGGING = {
     'version': 1,
