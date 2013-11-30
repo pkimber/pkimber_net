@@ -10,12 +10,10 @@ Install
 Virtual Environment
 -------------------
 
-Note: replace ``patrick`` with your name (checking in the ``settings`` folder to make sure a file
-has been created for you).
+Note: replace ``patrick`` with your name (checking in the ``settings`` folder
+to make sure a file has been created for you)::
 
-::
-
-  mkvirtualenv dev_patrick_net
+  mkvirtualenv p_pkimber_net
   pip install -r requirements/local.txt
 
   echo "export DJANGO_SETTINGS_MODULE=settings.dev_patrick" >> $VIRTUAL_ENV/bin/postactivate
@@ -31,17 +29,13 @@ has been created for you).
   add2virtualenv .
   deactivate
 
-To check the order of the imports:
+To check the order of the imports::
 
-::
-
-  workon dev_patrick_net
+  workon p_pkimber_net
   cdsitepackages
   cat _virtualenv_path_extensions.pth
 
-Check the imports are in the correct order e.g:
-
-::
+Check the imports are in the correct order e.g::
 
   /home/patrick/repo/dev/project/pkimber_net
   /home/patrick/repo/dev/app/base
@@ -53,17 +47,13 @@ Check the imports are in the correct order e.g:
 Testing
 -------
 
-We use ``pytest-django``:
+We use ``pytest-django``::
 
-::
-
-  workon dev_patrick_net
+  workon p_pkimber_net
   find . -name '*.pyc' -delete
   py.test
 
-To stop on first failure:
-
-::
+To stop on first failure::
 
   py.test -x
 
@@ -72,7 +62,7 @@ Usage
 
 ::
 
-  workon dev_patrick_net
+  workon p_pkimber_net
 
   py.test -x && \
       touch temp.db && rm temp.db && \
@@ -86,7 +76,7 @@ Usage
 
 If using test Postgres data downloaded from the live site::
 
-  workon dev_patrick_net
+  workon p_pkimber_net
 
   py.test -x && \
       django-admin.py syncdb --noinput && \
