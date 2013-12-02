@@ -10,6 +10,7 @@ from .views import (
     HomeView,
     PortfolioView,
     TechnologyView,
+    TempView,
 )
 
 
@@ -33,6 +34,10 @@ urlpatterns = patterns(
     url(regex=r'^me/technology/$',
         view=TechnologyView.as_view(),
         name='project.technology'
+        ),
+    url(regex=r'^temp/$',
+        view=TempView.as_view(),
+        name='project.temp'
         ),
     url(regex=r'^',
         view=include('login.urls')

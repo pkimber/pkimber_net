@@ -39,3 +39,8 @@ class TechnologyView(BaseMixin, ListView):
         'modified',
     )
     template_name = 'project/technology_list.html'
+
+
+class TempView(TemplateView):
+
+    template_name = 'project/index.html'
