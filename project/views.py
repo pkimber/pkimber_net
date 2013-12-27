@@ -1,6 +1,9 @@
 from django.views.generic import ListView, TemplateView
 
-from cms.models import Simple
+from cms.models import (
+    ModerateState,
+    Section,
+)
 from base.view_utils import BaseMixin
 
 
@@ -9,9 +12,9 @@ class ContactView(BaseMixin, TemplateView):
 
 
 class HomeView(BaseMixin, ListView):
-    queryset = Simple.objects.filter(
-        moderated=True,
-        section__name='home',
+    queryset = Section.objects.filter(
+        moderate_state=ModerateState.published(),
+        page__name='home',
     ).order_by(
         'order',
         'modified',
@@ -20,9 +23,9 @@ class HomeView(BaseMixin, ListView):
 
 
 class PortfolioView(BaseMixin, ListView):
-    queryset = Simple.objects.filter(
-        moderated=True,
-        section__name='portfolio',
+    queryset = Section.objects.filter(
+        moderate_state=ModerateState.published(),
+        page__name='portfolio',
     ).order_by(
         'order',
         'modified',
@@ -31,9 +34,9 @@ class PortfolioView(BaseMixin, ListView):
 
 
 class TechnologyView(BaseMixin, ListView):
-    queryset = Simple.objects.filter(
-        moderated=True,
-        section__name='tech',
+    queryset = Section.objects.filter(
+        moderate_state=ModerateState.published(),
+        page__name='tech',
     ).order_by(
         'order',
         'modified',
