@@ -137,7 +137,7 @@ TEMPLATE_DIRS = (
     # Don't forget to use absolute paths, not relative paths.
 )
 
-INSTALLED_APPS = (
+DJANGO_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -146,20 +146,28 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
+    # admin after login, so we prefer login templates
+    'django.contrib.admin',
+)
+
+THIRD_PARTY_APPS = (
     # 'django_extensions',
     # 'debug_toolbar',
     'haystack',
     'reversion',
     'south',
+)
+
+LOCAL_APPS = (
     'project',
     'base',
     'cms',
     'crm',
     'invoice',
     'login',
-    # admin after login, so we prefer login templates
-    'django.contrib.admin',
 )
+
+INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
 # URL where requests are redirected after login when the contrib.auth.login
 # view gets no next parameter.
