@@ -21,6 +21,7 @@ to make sure a file has been created for you)::
   echo "export SECRET_KEY=\"the_secret_key\"" >> $VIRTUAL_ENV/bin/postactivate
   echo "unset SECRET_KEY" >> $VIRTUAL_ENV/bin/postdeactivate
 
+  add2virtualenv ../../app/moderate
   add2virtualenv ../../app/login
   add2virtualenv ../../app/invoice
   add2virtualenv ../../app/crm
@@ -43,6 +44,7 @@ Check the imports are in the correct order e.g::
   /home/patrick/repo/dev/app/crm
   /home/patrick/repo/dev/app/invoice
   /home/patrick/repo/dev/app/login
+  /home/patrick/repo/dev/app/moderate
 
 Testing
 -------
@@ -68,6 +70,7 @@ Usage
       touch temp.db && rm temp.db && \
       django-admin.py syncdb --noinput && \
       django-admin.py migrate --all --noinput && \
+      django-admin.py init_app_moderate && \
       django-admin.py demo_data_login && \
       django-admin.py demo_data_cms && \
       django-admin.py demo_data_crm && \
@@ -81,6 +84,7 @@ If using test Postgres data downloaded from the live site::
   py.test -x && \
       django-admin.py syncdb --noinput && \
       django-admin.py migrate --all --noinput && \
+      django-admin.py init_app_moderate && \
       django-admin.py runserver
 
 Release and Deploy

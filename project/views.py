@@ -1,10 +1,10 @@
 from django.views.generic import ListView, TemplateView
 
-from cms.models import (
-    ModerateState,
-    Section,
-)
 from base.view_utils import BaseMixin
+from cms.models import (
+    Content,
+    Page,
+)
 
 
 class ContactView(BaseMixin, TemplateView):
@@ -12,38 +12,27 @@ class ContactView(BaseMixin, TemplateView):
 
 
 class HomeView(BaseMixin, ListView):
-    queryset = Section.objects.filter(
-        moderate_state=ModerateState.published(),
-        page__name='home',
-    ).order_by(
-        'order',
-        'modified',
-    )
+
     template_name = 'project/home_list.html'
+
+    def get_queryset(self):
+        page = Page.objects.get(name='home')
+        return Content.objects.published(page=page)
 
 
 class PortfolioView(BaseMixin, ListView):
-    queryset = Section.objects.filter(
-        moderate_state=ModerateState.published(),
-        page__name='portfolio',
-    ).order_by(
-        'order',
-        'modified',
-    )
+
     template_name = 'project/portfolio_list.html'
+
+    def get_queryset(self):
+        page = Page.objects.get(name='portfolio')
+        return Content.objects.published(page=page)
 
 
 class TechnologyView(BaseMixin, ListView):
-    queryset = Section.objects.filter(
-        moderate_state=ModerateState.published(),
-        page__name='tech',
-    ).order_by(
-        'order',
-        'modified',
-    )
+
     template_name = 'project/technology_list.html'
 
-
-class TempView(TemplateView):
-
-    template_name = 'project/index.html'
+    def get_queryset(self):
+        page = Page.objects.get(name='tech')
+        return Content.objects.published(page=page)
