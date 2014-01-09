@@ -27,13 +27,6 @@
       CRM
     </a>
   </li>
-  <li {% if 'invoice/time' in path %}class="pure-menu-selected"{% endif %} >
-    {% if user.is_staff %}
-      <a href="{% url "invoice.time" %}">
-        Time
-      </a>
-    {% endif %}
-  </li>
   <li {% if 'me/contact' in path %}class="pure-menu-selected"{% endif %}>
     <a href="{% url "project.contact" %}">Contact Me</a>
   </li>
