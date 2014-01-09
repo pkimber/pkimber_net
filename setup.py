@@ -20,7 +20,7 @@ def get_readme():
 
 setup(
     name='pkimber-pkimber-net',
-    packages=['project', 'project.templatetags', 'project.management', 'project.management.commands', 'settings'],
+    packages=['project', 'project.templatetags', 'project.migrations', 'project.management', 'project.management.commands', 'settings'],
     package_data={
         'project': [
             'static/*.*',
@@ -31,7 +31,7 @@ setup(
             'templates/project/*.*',
         ],
     },
-    version='0.0.40',
+    version='0.0.41',
     description='my web site',
     author='Patrick Kimber',
     author_email='code@pkimber.net',
