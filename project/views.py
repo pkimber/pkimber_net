@@ -1,10 +1,11 @@
 from django.views.generic import ListView, TemplateView
 
 from base.view_utils import BaseMixin
-from cms.models import (
-    Content,
-    Page,
-)
+from cms.models import Section
+from .models import StripeContent
+
+
+LAYOUT_SLUG = 'body'
 
 
 class ContactView(BaseMixin, TemplateView):
@@ -16,8 +17,11 @@ class HomeView(BaseMixin, ListView):
     template_name = 'project/home_list.html'
 
     def get_queryset(self):
-        page = Page.objects.get(name='home')
-        return Content.objects.published(page=page)
+        section = Section.objects.get(
+            page__slug='home',
+            layout__slug=LAYOUT_SLUG,
+        )
+        return StripeContent.objects.published(section)
 
 
 class PortfolioView(BaseMixin, ListView):
@@ -25,8 +29,11 @@ class PortfolioView(BaseMixin, ListView):
     template_name = 'project/portfolio_list.html'
 
     def get_queryset(self):
-        page = Page.objects.get(name='portfolio')
-        return Content.objects.published(page=page)
+        section = Section.objects.get(
+            page__slug='portfolio',
+            layout__slug=LAYOUT_SLUG,
+        )
+        return StripeContent.objects.published(section)
 
 
 class TechnologyView(BaseMixin, ListView):
@@ -34,5 +41,8 @@ class TechnologyView(BaseMixin, ListView):
     template_name = 'project/technology_list.html'
 
     def get_queryset(self):
-        page = Page.objects.get(name='tech')
-        return Content.objects.published(page=page)
+        section = Section.objects.get(
+            page__slug='tech',
+            layout__slug=LAYOUT_SLUG,
+        )
+        return StripeContent.objects.published(section)

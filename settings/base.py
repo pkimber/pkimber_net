@@ -154,6 +154,7 @@ THIRD_PARTY_APPS = (
     # 'django_extensions',
     # 'debug_toolbar',
     'haystack',
+    'mailgun_incoming',
     'reversion',
     'south',
 )
@@ -165,7 +166,6 @@ LOCAL_APPS = (
     'crm',
     'invoice',
     'login',
-    'moderate',
 )
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
