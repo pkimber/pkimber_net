@@ -4,3 +4,4 @@ pkimber-cms==0.0.19
 pkimber-crm==0.0.22
 pkimber-invoice==0.0.16
 pkimber-login==0.0.14
+pkimber-search==0.0.05
