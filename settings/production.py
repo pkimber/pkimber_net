@@ -24,6 +24,13 @@ DATABASES = {
 FTP_STATIC_DIR = get_env_variable('FTP_STATIC_DIR')
 FTP_STATIC_URL = get_env_variable('FTP_STATIC_URL')
 
+HAYSTACK_CONNECTIONS = {
+    'default': {
+        'ENGINE': 'haystack.backends.solr_backend.SolrEngine',
+        'URL': 'http://127.0.0.1:8080/solr/{}'.format(SITE_NAME)
+    },
+}
+
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/media/"
 MEDIA_ROOT = get_env_variable("MEDIA_ROOT")

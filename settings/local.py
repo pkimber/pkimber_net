@@ -12,6 +12,12 @@ TEMPLATE_STRING_IF_INVALID = '**** INVALID EXPRESSION: %s ****'
 FTP_STATIC_DIR = None
 FTP_STATIC_URL = None
 
+HAYSTACK_CONNECTIONS = {
+    'default': {
+        'ENGINE': 'haystack.backends.simple_backend.SimpleEngine',
+    },
+}
+
 # https://docs.djangoproject.com/en/1.5/howto/static-files/#serving-files-uploaded-by-a-user
 MEDIA_ROOT = 'media'
 

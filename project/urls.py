@@ -46,6 +46,9 @@ urlpatterns = patterns(
     url(regex=r'^invoice/',
         view=include('invoice.urls')
         ),
+    url(regex=r'^search/',
+        view=include('search.urls')
+        ),
 )
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

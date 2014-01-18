@@ -9,6 +9,10 @@
   Patrick Kimber
 {% endblock heading %}
 
+{% block sub_heading %}
+  CRM
+{% endblock sub_heading %}
+
 {% block menu %}
   <li {% if 'portfolio' in path %}class="pure-menu-selected"{% endif %}>
     <a href="{% url "project.portfolio" %}">Portfolio</a>
@@ -27,6 +31,11 @@
       CRM
     </a>
   </li>
+  {% if user.is_staff %}
+    <li {% if 'search' in path %}class="pure-menu-selected"{% endif %}>
+      <a href="{% url "search.search" %}">Search</a>
+    </li>
+  {% endif %}
   <li {% if 'me/contact' in path %}class="pure-menu-selected"{% endif %}>
     <a href="{% url "project.contact" %}">Contact Me</a>
   </li>
