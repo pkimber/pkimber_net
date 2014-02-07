@@ -78,7 +78,10 @@ Usage
       django-admin.py init_project && \
       django-admin.py runserver
 
-Browse to http://localhost:8000/crm/contact/
+Browse to http://localhost:8000/crm/contact/::
+
+  user          staff
+  password      staff
 
 If using test Postgres data downloaded from the live site::
 
