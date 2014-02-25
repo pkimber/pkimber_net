@@ -21,5 +21,5 @@ class StripeContent(ContentModel):
     def _get_content_set(self):
         return self.container.stripecontent_set
 
-    def __unicode__(self):
+    def __str__(self):
         return unicode('{} {}'.format(self.title, self.moderate_state))
