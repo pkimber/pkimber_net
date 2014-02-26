@@ -1,7 +1,7 @@
 -r base.txt
-pkimber-base==0.0.46
-pkimber-cms==0.0.22
-pkimber-crm==0.0.23
-pkimber-invoice==0.0.18
-pkimber-login==0.0.15
-pkimber-search==0.0.07
+pkimber-base==0.0.47
+pkimber-cms==0.0.23
+pkimber-crm==0.0.24
+pkimber-invoice==0.0.19
+pkimber-login==0.0.16
+pkimber-search==0.0.08
