@@ -5,7 +5,7 @@ django-sendfile==0.3.2
 Django==1.6.2
 docutils
 git+https://github.com/BradWhittington/django-mailgun.git#egg=django_mailgun
-git+https://github.com/etianen/django-reversion.git#egg=reversion
+git+https://github.com/pkimber/django-reversion.git#egg=reversion
 git+https://github.com/pkimber/django-haystack.git#egg=haystack
 git+https://github.com/pkimber/django-mailgun-incoming.git#egg=mailgun_incoming
 hg+https://bitbucket.org/rptlab/reportlab/@py33#egg=reportlab
