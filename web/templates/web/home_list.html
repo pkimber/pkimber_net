@@ -1,0 +1,23 @@
+{% extends "project/base.html" %}
+{% load block_tags %}
+
+{% block sub_title %}
+  Home
+{% endblock sub_title %}
+
+{% block sub_heading %}
+  Contact me to chat about database powered web sites,
+  linux deployment, android mobile apps, full-text search and
+  software testing
+{% endblock sub_heading %}
+
+{% block content %}
+  {% for c in main_list %}
+    {% if forloop.counter|divisibleby:"2" %}
+      {% include 'web/_content_right.html' %}
+    {% else %}
+      {% include 'web/_content_left.html' %}
+    {% endif %}
+  {% endfor %}
+  {% if design %}{% block_add main_create_url %}{% endif %}
+{% endblock content %}

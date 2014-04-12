@@ -1,0 +1,26 @@
+{% load block_tags %}
+{% load staticfiles %}
+{% load thumbnail %}
+
+<div class="pure-g-r marketing-ribbon">
+  {% if c.picture %}
+    <div class="pure-u-1-4">
+      <div class="l-box">
+        <a href="{{ c.url }}">
+          <img src="{{ MEDIA_URL}}{{ c.picture }}" alt="{{ c.title }}">
+        </a>
+      </div>
+    </div>
+  {% endif %}
+  <div class="pure-u-3-4">
+    <div class="l-hbox">
+      <h3>{{ c.title }}</h3>
+      <p>
+        {% autoescape off %}
+          {{ c.description }}
+        {% endautoescape %}
+      </p>
+      {% if design %}{% block_moderate c %}{% endif %}
+    </div>
+  </div>
+</div>

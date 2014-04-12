@@ -153,6 +153,7 @@ DJANGO_APPS = (
 THIRD_PARTY_APPS = (
     # 'django_extensions',
     # 'debug_toolbar',
+    'easy_thumbnails',
     'haystack',
     'mailgun_incoming',
     'reversion',
@@ -162,11 +163,12 @@ THIRD_PARTY_APPS = (
 LOCAL_APPS = (
     'project',
     'base',
-    'cms',
+    'block',
     'crm',
     'invoice',
     'login',
     'search',
+    'web',
 )
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS

@@ -15,10 +15,14 @@
 
 {% block menu %}
   <li {% if 'portfolio' in path %}class="pure-menu-selected"{% endif %}>
-    <a href="{% url "project.portfolio" %}">Portfolio</a>
+    <a href="{% url 'project.page' 'portfolio' %}">
+      Portfolio
+    </a>
   </li>
   <li {% if 'technology' in path %}class="pure-menu-selected"{% endif %}>
-    <a href="{% url "project.technology" %}">Technology</a>
+    <a href="{% url 'project.page' 'technology' %}">
+      Technology
+    </a>
   </li>
   <li>
     <a href="/howto/">My Memory</a>
@@ -37,8 +41,26 @@
     </li>
   {% endif %}
   <li {% if 'me/contact' in path %}class="pure-menu-selected"{% endif %}>
-    <a href="{% url "project.contact" %}">Contact Me</a>
+    <a href="{% url 'project.page' 'contact' %}">
+      Contact Me
+    </a>
   </li>
+  {% if user.is_staff %}
+    {% if is_block_page %}
+      <li>
+        <a href="{% if design %}..{% else %}{{ page.get_design_url }}{% endif %}"
+          title="{% if design %}View{% else %}Design{% endif %}" >
+          {% if design %}
+            <i class="fa fa-square-o"></i>
+            View
+          {% else %}
+            <i class="fa fa-edit"></i>
+            Design
+          {% endif %}
+        </a>
+      </li>
+    {% endif %}
+  {% endif %}
 {% endblock menu %}
 
 {% block footer %}

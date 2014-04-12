@@ -1,6 +1,6 @@
 -r base.txt
 -e ../../app/base
--e ../../app/cms
+-e ../../app/block
 -e ../../app/crm
 -e ../../app/invoice
 -e ../../app/login
@@ -10,4 +10,6 @@ gitpython
 hgapi
 ipdb
 pytest-django
+pytest-flakes
+pytest-pep8
 walkdir

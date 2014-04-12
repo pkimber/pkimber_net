@@ -1,39 +1,20 @@
+# -*- encoding: utf-8 -*-
+from __future__ import unicode_literals
+
 from django.conf import settings
-from django.conf.urls import include
-from django.conf.urls import patterns
-from django.conf.urls import url
+from django.conf.urls import (
+    include,
+    patterns,
+    url,
+)
 from django.conf.urls.static import static
 from django.contrib import admin
-
-from .views import (
-    ContactView,
-    HomeView,
-    PortfolioView,
-    TechnologyView,
-)
-
 
 admin.autodiscover()
 
 
 urlpatterns = patterns(
     '',
-    url(regex=r'^$',
-        view=HomeView.as_view(),
-        name='project.home'
-        ),
-    url(regex=r'^me/contact/$',
-        view=ContactView.as_view(),
-        name='project.contact'
-        ),
-    url(regex=r'^me/portfolio/$',
-        view=PortfolioView.as_view(),
-        name='project.portfolio'
-        ),
-    url(regex=r'^me/technology/$',
-        view=TechnologyView.as_view(),
-        name='project.technology'
-        ),
     url(regex=r'^',
         view=include('login.urls')
         ),
@@ -46,8 +27,14 @@ urlpatterns = patterns(
     url(regex=r'^invoice/',
         view=include('invoice.urls')
         ),
+    url(regex=r'^mailgun/',
+        view=include('mailgun_incoming.urls')
+        ),
     url(regex=r'^search/',
         view=include('search.urls')
+        ),
+    url(regex=r'^',
+        view=include('web.urls')
         ),
 )
 
