@@ -1,5 +1,6 @@
 recursive-include project/static *
 recursive-include project/templates *
+recursive-include web/templates *
 
 include LICENSE
 include manage.py
