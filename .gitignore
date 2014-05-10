@@ -29,6 +29,7 @@ nosetests.xml
 temp.db
 media
 media-private
+venv-*
 
 # Translations
 *.mo

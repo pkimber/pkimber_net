@@ -190,6 +190,10 @@ HAYSTACK_CONNECTIONS = {
     },
 }
 
+SOUTH_MIGRATION_MODULES = {
+    'easy_thumbnails': 'easy_thumbnails.south_migrations',
+}
+
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': True,
