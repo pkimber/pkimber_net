@@ -2,6 +2,6 @@
 pkimber-base==0.1.11
 pkimber-block==0.1.07
 pkimber-crm==0.0.27
-pkimber-invoice==0.0.22
+pkimber-invoice==0.1.01
 pkimber-login==0.1.05
 pkimber-search==0.0.10
