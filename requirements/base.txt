@@ -9,10 +9,10 @@ easy-thumbnails==2.0.1
 git+https://github.com/BradWhittington/django-mailgun.git#egg=django_mailgun
 git+https://github.com/pkimber/django-mailgun-incoming.git#egg=mailgun_incoming
 git+https://github.com/pkimber/django-sendfile#egg=sendfile
-lxml==3.3.5
 Pillow==2.4.0
 psycopg2==2.5.2
-pysolr==3.2.0
+pyelasticsearch==0.6.1
+python-dateutil==2.2
 pytz==2014.2
 PyYAML==3.11
 reportlab==3.1.8
