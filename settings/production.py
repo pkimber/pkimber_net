@@ -26,8 +26,9 @@ FTP_STATIC_URL = get_env_variable('FTP_STATIC_URL')
 
 HAYSTACK_CONNECTIONS = {
     'default': {
-        'ENGINE': 'haystack.backends.solr_backend.SolrEngine',
-        'URL': 'http://127.0.0.1:8080/solr/{}'.format(SITE_NAME)
+        'ENGINE': 'haystack.backends.elasticsearch_backend.ElasticsearchSearchEngine',
+        'URL': 'http://127.0.0.1:9200/',
+        'INDEX_NAME': '{}'.format(SITE_NAME),
     },
 }
 
