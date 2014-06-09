@@ -23,7 +23,9 @@ pip-log.txt
 MANIFEST
 
 # Unit test / coverage reports
+.cache/
 .coverage
+logfile
 .tox
 nosetests.xml
 temp.db
