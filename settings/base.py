@@ -212,8 +212,8 @@ LOGGING = {
             'level':'DEBUG',
             'class':'logging.handlers.RotatingFileHandler',
             'filename': "logfile",
-            'maxBytes': 50000,
-            'backupCount': 2,
+            'maxBytes': 500000,
+            'backupCount': 10,
             'formatter': 'standard',
         },
         'console':{
