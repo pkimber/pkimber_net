@@ -26,9 +26,11 @@ FTP_STATIC_URL = get_env_variable('FTP_STATIC_URL')
 
 HAYSTACK_CONNECTIONS = {
     'default': {
+        'BATCH_SIZE': 100,
         'ENGINE': 'haystack.backends.elasticsearch_backend.ElasticsearchSearchEngine',
-        'URL': 'http://127.0.0.1:9200/',
         'INDEX_NAME': '{}'.format(SITE_NAME),
+        'TIMEOUT': 60 * 5,
+        'URL': 'http://127.0.0.1:9200/',
     },
 }
 
