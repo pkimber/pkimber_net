@@ -2,9 +2,9 @@
 {% load staticfiles %}
 {% load thumbnail %}
 
-<div class="pure-g-r marketing-ribbon">
+<div class="pure-g marketing-ribbon">
   {% if c.picture %}
-    <div class="pure-u-1-4">
+    <div class="pure-u-1 pure-u-md-1-4">
       <div class="l-box">
         <a href="{{ c.url }}">
           <img src="{{ MEDIA_URL}}{{ c.picture }}" alt="{{ c.title }}">
@@ -12,7 +12,7 @@
       </div>
     </div>
   {% endif %}
-  <div class="pure-u-3-4">
+  <div class="pure-u-1 pure-u-md-3-4">
     <div class="l-hbox">
       <h3>{{ c.title }}</h3>
       <p>

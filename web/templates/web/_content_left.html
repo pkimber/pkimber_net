@@ -2,8 +2,8 @@
 {% load staticfiles %}
 {% load thumbnail %}
 
-<div class="pure-g-r marketing-ribbon">
-  <div class="pure-u-1-2">
+<div class="pure-g marketing-ribbon">
+  <div class="pure-u-1 pure-u-md-1-2">
     <div class="l-hbox">
       <h3>
         <a href="{{ c.url }}">{{ c.title }}</a>
@@ -14,7 +14,7 @@
       {% if design %}{% block_moderate c %}{% endif %}
     </div>
   </div>
-  <div class="pure-u-1-2">
+  <div class="pure-u-1 pure-u-md-1-2">
     <div class="l-box">
       <a href="{{ c.url }}">
         <img src="{{ MEDIA_URL}}{{ c.picture }}" alt="{{ c.title }}">
