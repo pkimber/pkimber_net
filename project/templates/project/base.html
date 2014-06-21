@@ -14,6 +14,19 @@
 {% endblock sub_heading %}
 
 {% block menu %}
+  {% if user.is_staff %}
+    <li {% if 'crm' in path %}class="pure-menu-selected"{% endif %}
+      {% if 'invoice' in path %}class="pure-menu-selected"{% endif %}
+      {% if 'login' in path %}class="pure-menu-selected"{% endif %}
+      >
+      <a href="{% url "crm.ticket.home" %}">
+        CRM
+      </a>
+    </li>
+    <li {% if 'search' in path %}class="pure-menu-selected"{% endif %}>
+      <a href="{% url "search.search" %}">Search</a>
+    </li>
+  {% endif %}
   <li {% if 'portfolio' in path %}class="pure-menu-selected"{% endif %}>
     <a href="{% url 'project.page' 'portfolio' %}">
       Portfolio
@@ -27,19 +40,6 @@
   <li>
     <a href="/howto/">My Memory</a>
   </li>
-  <li {% if 'crm' in path %}class="pure-menu-selected"{% endif %}
-    {% if 'invoice' in path %}class="pure-menu-selected"{% endif %}
-    {% if 'login' in path %}class="pure-menu-selected"{% endif %}
-    >
-    <a href="{% url "crm.ticket.home" %}">
-      CRM
-    </a>
-  </li>
-  {% if user.is_staff %}
-    <li {% if 'search' in path %}class="pure-menu-selected"{% endif %}>
-      <a href="{% url "search.search" %}">Search</a>
-    </li>
-  {% endif %}
   <li {% if 'me/contact' in path %}class="pure-menu-selected"{% endif %}>
     <a href="{% url 'project.page' 'contact' %}">
       Contact Me
