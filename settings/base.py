@@ -173,6 +173,10 @@ LOCAL_APPS = (
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
+DEFAULT_FROM_EMAIL = 'web@pkimber.net'
+# See the list of constants at the top of 'mail.models'
+MAIL_TEMPLATE_TYPE = 'django'
+
 # URL where requests are redirected after login when the contrib.auth.login
 # view gets no next parameter.
 LOGIN_REDIRECT_URL = reverse_lazy('crm.ticket.home')
