@@ -1,7 +1,7 @@
 -r base.txt
-pkimber-base==0.1.14
-pkimber-block==0.1.08
-pkimber-crm==0.1.02
+pkimber-base==0.1.15
+pkimber-block==0.1.10
+pkimber-crm==0.1.03
 pkimber-invoice==0.1.03
-pkimber-login==0.1.13
+pkimber-login==0.1.14
 pkimber-search==0.1.01
