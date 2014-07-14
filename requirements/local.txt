@@ -7,6 +7,7 @@
 -e ../../app/login
 -e ../../app/search
 fabric
+factory-boy
 gitpython
 hgapi
 ipdb
