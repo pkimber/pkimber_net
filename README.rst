@@ -46,7 +46,7 @@ Usage
 Browse to http://localhost:8000/crm/contact/::
 
   user          staff
-  password      staff
+  password      letmein
 
 If using test Postgres data downloaded from the live site::
 
