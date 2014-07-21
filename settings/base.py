@@ -102,6 +102,7 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
     #'django.contrib.staticfiles.finders.DefaultStorageFinder',
+    'compressor.finders.CompressorFinder',
 )
 
 # Make this unique, and don't share it with anybody.
@@ -151,6 +152,7 @@ DJANGO_APPS = (
 )
 
 THIRD_PARTY_APPS = (
+    'compressor',
     # 'django_extensions',
     # 'debug_toolbar',
     'easy_thumbnails',
