@@ -42,6 +42,7 @@ media
 media-private
 temp.db
 venv-*
+web_static
 
 # private info
 .private
