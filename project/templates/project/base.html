@@ -37,15 +37,9 @@
       Technology
     </a>
   </li>
-  <li>
-    <a href="/open/">Open</a>
-  </li>
-  <li>
-    <a href="/howto/">My Memory</a>
-  </li>
   <li {% if 'me/contact' in path %}class="pure-menu-selected"{% endif %}>
     <a href="{% url 'project.page' 'contact' %}">
-      Contact Me
+      Contact me
     </a>
   </li>
   {% if user.is_staff %}
@@ -64,6 +58,12 @@
       </li>
     {% endif %}
   {% endif %}
+  <li>
+    <a href="/howto/">My memory</a>
+  </li>
+  <li>
+    <a href="/open/">Open source</a>
+  </li>
 {% endblock menu %}
 
 {% block footer %}
