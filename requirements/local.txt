@@ -6,6 +6,7 @@
 -e ../../app/invoice
 -e ../../app/login
 -e ../../app/search
+devpi-client
 fabric
 factory-boy
 gitpython
