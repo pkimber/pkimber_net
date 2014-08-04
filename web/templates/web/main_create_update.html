@@ -15,10 +15,8 @@
       {% include '_form.html' with legend='Content' multipart=True %}
     </div>
   </div>
-
 {% endblock content %}
 
-{% block script %}
-  {{ block.super }}
+{% block script_extra %}
   {% include 'base/_ckeditor.html' %}
-{% endblock script %}
+{% endblock script_extra %}
