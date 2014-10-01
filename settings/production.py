@@ -2,6 +2,7 @@ from .base import *
 
 DEBUG = False
 TEMPLATE_DEBUG = DEBUG
+TESTING = get_env_variable_bool('TESTING')
 
 if get_env_variable_bool('SSL'):
     SESSION_COOKIE_SECURE = True
@@ -12,7 +13,7 @@ ALLOWED_HOSTS = [get_env_variable('ALLOWED_HOSTS'), ]
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': SITE_NAME,
+        'NAME': '{}_test'.format(SITE_NAME) if TESTING else SITE_NAME,
         'USER': SITE_NAME,
         'PASSWORD': get_env_variable('DB_PASS'),
         'HOST': get_env_variable('DB_IP'),
