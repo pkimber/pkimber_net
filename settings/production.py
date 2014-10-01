@@ -21,8 +21,8 @@ DATABASES = {
 }
 
 # FTP upload 'static' folder
-FTP_STATIC_DIR = get_env_variable('FTP_STATIC_DIR')
-FTP_STATIC_URL = get_env_variable('FTP_STATIC_URL')
+FTP_STATIC_DIR = None
+FTP_STATIC_URL = None
 
 HAYSTACK_CONNECTIONS = {
     'default': {
