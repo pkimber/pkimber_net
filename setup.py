@@ -36,7 +36,7 @@ setup(
             'templates/web/*.*',
         ],
     },
-    version='0.1.19',
+    version='0.1.20',
     description='my web site',
     author='Patrick Kimber',
     author_email='code@pkimber.net',
