@@ -19,7 +19,7 @@ def get_readme():
 
 
 setup(
-    name='pkimber-pkimber-net',
+    name='kb-pkimber-net',
     packages=['project', 'project.templatetags', 'project.migrations', 'project.management', 'project.management.commands', 'web', 'web.migrations', 'web.tests', 'settings'],
     package_data={
         'project': [
@@ -36,7 +36,7 @@ setup(
             'templates/web/*.*',
         ],
     },
-    version='0.1.18',
+    version='0.1.19',
     description='my web site',
     author='Patrick Kimber',
     author_email='code@pkimber.net',
