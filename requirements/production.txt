@@ -2,6 +2,6 @@
 kb-base==0.1.29
 kb-block==0.1.16
 kb-crm==0.1.08
-kb-invoice==0.1.10
+kb-invoice==0.1.11
 kb-login==0.1.23
 kb-search==0.1.11
