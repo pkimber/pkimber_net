@@ -46,13 +46,14 @@
     {% if is_block_page %}
       <li>
         <a href="{% if design %}..{% else %}{{ page.get_design_url }}{% endif %}"
-          title="{% if design %}View{% else %}Design{% endif %}" >
+          title="{% if design %}View{% else %}Design{% endif %}" 
+          style="text-align: right; padding: 0.0em 6px 0.0em 0.0em">
           {% if design %}
-            <i class="fa fa-square-o"></i>
             View
+            <i class="fa fa-square-o"></i>
           {% else %}
-            <i class="fa fa-edit"></i>
             Design
+            <i class="fa fa-edit"></i>
           {% endif %}
         </a>
       </li>
