@@ -32,31 +32,24 @@
       Portfolio
     </a>
   </li>
+  {% if 'portfolio' in path %}
+    {% include 'project/_design_menu.html' %}
+  {% endif %}
   <li {% if 'technology' in path %}class="pure-menu-selected"{% endif %}>
     <a href="{% url 'project.page' 'technology' %}">
       Technology
     </a>
   </li>
-  <li {% if 'me/contact' in path %}class="pure-menu-selected"{% endif %}>
+  {% if 'technology' in path %}
+    {% include 'project/_design_menu.html' %}
+  {% endif %}
+  <li {% if 'contact' in path %}class="pure-menu-selected"{% endif %}>
     <a href="{% url 'project.page' 'contact' %}">
       Contact me
     </a>
   </li>
-  {% if user.is_staff %}
-    {% if is_block_page %}
-      <li>
-        <a href="{% if design %}..{% else %}{{ page.get_design_url }}{% endif %}"
-          title="{% if design %}View{% else %}Design{% endif %}" >
-          {% if design %}
-            <i class="fa fa-square-o"></i>
-            View
-          {% else %}
-            <i class="fa fa-edit"></i>
-            Design
-          {% endif %}
-        </a>
-      </li>
-    {% endif %}
+  {% if 'contact' in path %}
+    {% include 'project/_design_menu.html' %}
   {% endif %}
   <li>
     <a href="/howto/">My memory</a>
