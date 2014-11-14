@@ -21,6 +21,20 @@ DATABASES = {
     }
 }
 
+# Celery
+BROKER_URL = 'redis://localhost:6379/0'
+CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'
+# https://kfalck.net/2013/02/21/run-multiple-celeries-on-a-single-redis
+CELERY_DEFAULT_QUEUE = '{}'.format(SITE_NAME)
+
+from celery.schedules import crontab
+CELERYBEAT_SCHEDULE = {
+    'update_search_index': {
+        'task': 'member.tasks.update_search_index',
+        'schedule': crontab(minute='15', hour='*/1'),
+    },
+}
+
 # FTP upload 'static' folder
 FTP_STATIC_DIR = None
 FTP_STATIC_URL = None
@@ -34,6 +48,7 @@ HAYSTACK_CONNECTIONS = {
         'URL': 'http://127.0.0.1:9200/',
     },
 }
+HAYSTACK_SIGNAL_PROCESSOR = 'celery_haystack.signals.CelerySignalProcessor'
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/media/"

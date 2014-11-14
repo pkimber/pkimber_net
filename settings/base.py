@@ -152,6 +152,7 @@ DJANGO_APPS = (
 )
 
 THIRD_PARTY_APPS = (
+    'celery_haystack',
     'compressor',
     # 'django_extensions',
     # 'debug_toolbar',
@@ -187,14 +188,6 @@ LOGIN_REDIRECT_URL = reverse_lazy('crm.ticket.home')
 # must be logged in before accessing the view otherwise this URL
 # will be called.
 # LOGIN_URL = reverse_lazy('login.login')
-
-# This project is not using Haystack/SOLR, but the cron task will still be
-# running... so just install the simple engine.
-HAYSTACK_CONNECTIONS = {
-    'default': {
-        'ENGINE': 'haystack.backends.simple_backend.SimpleEngine',
-    },
-}
 
 SOUTH_MIGRATION_MODULES = {
     'easy_thumbnails': 'easy_thumbnails.south_migrations',

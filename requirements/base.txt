@@ -1,12 +1,17 @@
 bleach==1.4
+celery-haystack==0.8
+celery==3.1.13
 cssselect==0.9.1
 django-braces==1.4.0
 django-compressor==1.4
 django-haystack==2.1.0
+django-haystack==2.2.0
+django-redis==3.7.0
 django-reversion==1.8.0
-Django==1.6.6
+Django==1.6.8
 docutils==0.11
 easy-thumbnails==2.0.1
+elasticsearch==1.2.0
 git+https://github.com/BradWhittington/django-mailgun.git#egg=django_mailgun
 git+https://github.com/pkimber/django-mailgun-incoming.git#egg=mailgun_incoming
 git+https://github.com/pkimber/django-sendfile#egg=sendfile
@@ -16,5 +21,6 @@ pyelasticsearch==0.6.1
 python-dateutil==2.2
 pytz==2014.2
 PyYAML==3.11
+redis==2.10.1
 reportlab==3.1.8
 South==1.0
