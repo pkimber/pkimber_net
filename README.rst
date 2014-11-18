@@ -34,8 +34,7 @@ Usage
 
   py.test -x && \
       touch temp.db && rm temp.db && \
-      django-admin.py syncdb --noinput && \
-      django-admin.py migrate --all --noinput && \
+      django-admin.py migrate --noinput && \
       django-admin.py init_app_block && \
       django-admin.py demo_data_login && \
       django-admin.py demo_data_crm && \
@@ -51,12 +50,11 @@ Browse to http://localhost:8000/crm/contact/::
 If using test Postgres data downloaded from the live site::
 
   py.test -x && \
-      django-admin.py syncdb --noinput && \
-      django-admin.py migrate --all --noinput && \
+      django-admin.py migrate --noinput && \
       django-admin.py init_app_block && \
       django-admin.py runserver
 
 Release and Deploy
 ==================
 
-https://django-dev-and-deploy-using-salt.readthedocs.org/
+https://www.pkimber.net/open/

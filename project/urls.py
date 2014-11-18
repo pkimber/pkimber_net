@@ -27,9 +27,6 @@ urlpatterns = patterns(
     url(regex=r'^invoice/',
         view=include('invoice.urls')
         ),
-    url(regex=r'^mailgun/',
-        view=include('mailgun_incoming.urls')
-        ),
     url(regex=r'^search/',
         view=include('search.urls')
         ),
