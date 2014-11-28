@@ -1,6 +1,10 @@
 {% extends "project/base.html" %}
 {% load staticfiles %}
 
+{% block stylesheets_extra %}
+  {% include 'base/_dropzone.css.html' %}
+{% endblock stylesheets_extra %}
+
 {% block sub_title %}
   Content update
 {% endblock sub_title %}
@@ -12,11 +16,12 @@
 {% block content %}
   <div class="pure-g">
     <div class="pure-u-1">
-      {% include '_form.html' with legend='Content' multipart=True %}
+      {% include '_form.html' with legend='Content' dropzone=True multipart=True %}
     </div>
   </div>
 {% endblock content %}
 
 {% block script_extra %}
   {% include 'base/_ckeditor.html' %}
+  {% include 'base/_dropzone.js.html' %}
 {% endblock script_extra %}

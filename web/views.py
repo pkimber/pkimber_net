@@ -91,6 +91,19 @@ class MainUpdateView(
     model = Main
     template_name = 'web/main_create_update.html'
 
+    def post(self, request, *args, **kwargs):
+        print('POST, POST')
+        return super(MainUpdateView, self).post(request, *args, **kwargs)
+
+    def form_invalid(self, form):
+        print('form_invalid')
+        return super(MainUpdateView, self).form_invalid(form)
+
+    def form_valid(self, form):
+        print('form_valid')
+        self.object = form.save(commit=False)
+        return super(MainUpdateView, self).form_valid(form)
+
 
 class MainRemoveView(
         LoginRequiredMixin, StaffuserRequiredMixin, ContentRemoveView):
