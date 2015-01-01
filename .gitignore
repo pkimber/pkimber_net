@@ -38,6 +38,9 @@ nosetests.xml
 .pydevproject
 
 # dev
+.cache
+logfile
+logfile.*
 media
 media-private
 temp.db
