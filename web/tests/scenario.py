@@ -15,7 +15,6 @@ def _create_page(page_name, page_slug, page_num, template_name, is_home):
         template_name=template_name,
         is_home=is_home,
     )
-    return page
 
 
 def _create_main_section():

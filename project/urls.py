@@ -9,17 +9,12 @@ from django.conf.urls import (
 )
 from django.conf.urls.static import static
 from django.contrib import admin
-from django.views.generic.base import RedirectView
 
 admin.autodiscover()
 
 
 urlpatterns = patterns(
     '',
-    #url(regex=r'^dash/$',
-    #    view=RedirectView.as_view(pattern_name='cms.page.list'),
-    #    name='project.dash'
-    #    ),
     url(regex=r'^',
         view=include('login.urls')
         ),
