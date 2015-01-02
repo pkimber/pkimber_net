@@ -2,6 +2,7 @@
 -e .
 -e ../../app/base
 -e ../../app/block
+-e ../../app/cms
 -e ../../app/crm
 -e ../../app/invoice
 -e ../../app/login

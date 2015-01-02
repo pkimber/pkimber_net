@@ -1,4 +1,4 @@
-{% extends "base/base.html" %}
+{% extends 'cms/base.html' %}
 {% load staticfiles %}
 
 {% block title %}
@@ -13,7 +13,7 @@
   CRM
 {% endblock sub_heading %}
 
-{% block menu %}
+{% block menu_dash %}
   {% if user.is_staff %}
     <li {% if 'crm' in path %}class="pure-menu-selected"{% endif %}
       {% if 'invoice' in path %}class="pure-menu-selected"{% endif %}
@@ -27,37 +27,16 @@
       <a href="{% url "search.search" %}">Search</a>
     </li>
   {% endif %}
-  <li {% if 'portfolio' in path %}class="pure-menu-selected"{% endif %}>
-    <a href="{% url 'project.page' 'portfolio' %}">
-      Portfolio
-    </a>
-  </li>
-  {% if 'portfolio' in path %}
-    {% include 'project/_design_menu.html' %}
-  {% endif %}
-  <li {% if 'technology' in path %}class="pure-menu-selected"{% endif %}>
-    <a href="{% url 'project.page' 'technology' %}">
-      Technology
-    </a>
-  </li>
-  {% if 'technology' in path %}
-    {% include 'project/_design_menu.html' %}
-  {% endif %}
-  <li {% if 'contact' in path %}class="pure-menu-selected"{% endif %}>
-    <a href="{% url 'project.page' 'contact' %}">
-      Contact me
-    </a>
-  </li>
-  {% if 'contact' in path %}
-    {% include 'project/_design_menu.html' %}
-  {% endif %}
+{% endblock menu_dash %}
+
+{% block menu_extra %}
   <li>
     <a href="/howto/">My memory</a>
   </li>
   <li>
     <a href="/open/">Open source</a>
   </li>
-{% endblock menu %}
+{% endblock menu_extra %}
 
 {% block footer %}
   <div class="legal pure-g">

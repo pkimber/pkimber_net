@@ -9,20 +9,31 @@ from django.conf.urls import (
 )
 from django.conf.urls.static import static
 from django.contrib import admin
+from django.views.generic.base import RedirectView
 
 admin.autodiscover()
 
 
 urlpatterns = patterns(
     '',
+    #url(regex=r'^dash/$',
+    #    view=RedirectView.as_view(pattern_name='cms.page.list'),
+    #    name='project.dash'
+    #    ),
     url(regex=r'^',
         view=include('login.urls')
         ),
     url(regex=r'^admin/',
         view=include(admin.site.urls)
         ),
+    url(regex=r'^cms/',
+        view=include('cms.urls.cms')
+        ),
     url(regex=r'^crm/',
         view=include('crm.urls')
+        ),
+    url(regex=r'^dash/',
+        view=include('dash.urls')
         ),
     url(regex=r'^invoice/',
         view=include('invoice.urls')
@@ -32,6 +43,10 @@ urlpatterns = patterns(
         ),
     url(regex=r'^',
         view=include('web.urls')
+        ),
+    # this url include should come last
+    url(regex=r'^',
+        view=include('cms.urls.page')
         ),
 )
 
