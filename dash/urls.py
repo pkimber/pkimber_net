@@ -6,7 +6,10 @@ from django.conf.urls import (
     url,
 )
 
-from .views import HomeView
+from .views import (
+    HomeView,
+    SettingsView,
+)
 
 
 urlpatterns = patterns(
@@ -14,5 +17,9 @@ urlpatterns = patterns(
     url(regex=r'^$',
         view=HomeView.as_view(),
         name='project.dash'
+        ),
+    url(regex=r'^settings/$',
+        view=SettingsView.as_view(),
+        name='project.settings'
         ),
 )
