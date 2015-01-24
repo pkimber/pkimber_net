@@ -20,7 +20,7 @@ def get_readme():
 
 setup(
     name='kb-pkimber-net',
-    packages=['project', 'project.templatetags', 'project.management', 'project.management.commands', 'web', 'web.migrations', 'web.tests', 'dash', 'settings'],
+    packages=['project', 'project.templatetags', 'project.management', 'project.management.commands', 'web', 'web.migrations', 'web.tests', 'dash', 'dash.tests', 'settings'],
     package_data={
         'project': [
             'static/*.*',
@@ -41,7 +41,7 @@ setup(
             'templates/dash/*.*',
         ],
     },
-    version='0.1.26',
+    version='0.1.27',
     description='my web site',
     author='Patrick Kimber',
     author_email='code@pkimber.net',
@@ -54,6 +54,7 @@ setup(
         'Natural Language :: English',
         'Operating System :: OS Independent',
         'Programming Language :: Python',
+        'Programming Language :: Python :: 3',
         'Topic :: Office/Business :: Scheduling',
     ],
     long_description=get_readme(),

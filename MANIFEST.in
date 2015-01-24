@@ -8,5 +8,3 @@ include manage.py
 include README
 include requirements/*.txt
 include *.txt
-
-prune example/
