@@ -6,6 +6,7 @@
 -e ../../app/crm
 -e ../../app/invoice
 -e ../../app/login
+-e ../../app/mail
 -e ../../app/search
 devpi-client
 fabric
