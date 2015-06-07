@@ -4,6 +4,7 @@
 -e ../../app/block
 -e ../../app/cms
 -e ../../app/crm
+-e ../../app/finance
 -e ../../app/invoice
 -e ../../app/login
 -e ../../app/mail

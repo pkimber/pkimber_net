@@ -1,7 +1,7 @@
+# -*- encoding: utf-8 -*-
 from .base import *
 
 DEBUG = False
-TEMPLATE_DEBUG = DEBUG
 TESTING = get_env_variable_bool('TESTING')
 
 if get_env_variable_bool('SSL'):

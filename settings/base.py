@@ -122,12 +122,25 @@ ROOT_URLCONF = 'project.urls'
 # Python dotted path to the WSGI application used by Django's runserver.
 WSGI_APPLICATION = 'project.wsgi.application'
 
-TEMPLATE_DIRS = (
-    # Put strings here, like "/home/html/django_templates"
-    # or "C:/www/django/templates".
-    # Always use forward slashes, even on Windows.
-    # Don't forget to use absolute paths, not relative paths.
-)
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.contrib.auth.context_processors.auth',
+                'django.template.context_processors.debug',
+                'django.template.context_processors.i18n',
+                'django.template.context_processors.media',
+                'django.template.context_processors.static',
+                'django.template.context_processors.tz',
+                'django.contrib.messages.context_processors.messages',
+            ],
+            'string_if_invalid': '**** INVALID EXPRESSION: %s ****',
+        },
+    },
+]
 
 DJANGO_APPS = (
     'django.contrib.auth',
@@ -158,6 +171,7 @@ LOCAL_APPS = (
     'cms',
     'crm',
     'dash',
+    'finance',
     'invoice',
     'login',
     'mail',
@@ -166,6 +180,8 @@ LOCAL_APPS = (
 )
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
+
+CONTACT_MODEL = 'crm.Contact'
 
 DEFAULT_FROM_EMAIL = 'web@pkimber.net'
 # See the list of constants at the top of 'mail.models'
@@ -180,9 +196,7 @@ LOGIN_REDIRECT_URL = reverse_lazy('crm.ticket.home')
 # will be called.
 # LOGIN_URL = reverse_lazy('login.login')
 
-SOUTH_MIGRATION_MODULES = {
-    'easy_thumbnails': 'easy_thumbnails.south_migrations',
-}
+TASKWARRIOR = get_env_variable("TASKWARRIOR")
 
 LOGGING = {
     'version': 1,

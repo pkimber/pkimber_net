@@ -1,13 +1,11 @@
+# -*- encoding: utf-8 -*-
 from .base import *
 
 DEBUG = True
-TEMPLATE_DEBUG = DEBUG
 TESTING = False
 
 SESSION_COOKIE_SECURE = False
 CSRF_COOKIE_SECURE = False
-
-TEMPLATE_STRING_IF_INVALID = '**** INVALID EXPRESSION: %s ****'
 
 # FTP upload 'static' folder
 FTP_STATIC_DIR = None
