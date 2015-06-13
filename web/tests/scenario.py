@@ -1,25 +1,17 @@
-from block.service import (
-    init_page,
-    init_page_section,
-    init_section,
+# -*- encoding: utf-8 -*-
+from block.models import (
+    Page,
+    PageSection,
+    Section,
 )
 
 from web.models import PAGE_HOME
 
 
-def _create_page(page_name, page_slug, page_num, template_name, is_home):
-    return init_page(
-        page_name,
-        page_slug,
-        page_num,
-        template_name=template_name,
-        is_home=is_home,
-    )
-
-
-def _create_main_section():
-    return init_section(
-        'main'.capitalize(),
+def _init_main_section():
+    return Section.objects.init_section(
+        'main',
+        'Main',
         'web',
         'Main',
         'web.main.create',
@@ -27,36 +19,37 @@ def _create_main_section():
 
 
 def init_app_web():
-    section_main = _create_main_section()
-    home = _create_page(
-        PAGE_HOME.capitalize(),
+    section_main = _init_main_section()
+    home = Page.objects.init_page(
         PAGE_HOME,
+        '',
+        PAGE_HOME.capitalize(),
         0,
         'web/home_list.html',
-        True
+        is_home=True
     )
-    init_page_section(home, section_main)
-    portfolio = _create_page(
-        'Portfolio',
+    PageSection.objects.init_page_section(home, section_main)
+    portfolio = Page.objects.init_page(
         'portfolio',
+        '',
+        'Portfolio',
         1,
         'web/portfolio_list.html',
-        False
     )
-    init_page_section(portfolio, section_main)
-    technology = _create_page(
-        'Technology',
+    PageSection.objects.init_page_section(portfolio, section_main)
+    technology = Page.objects.init_page(
         'technology',
+        '',
+        'Technology',
         2,
         'web/technology_list.html',
-        False
     )
-    init_page_section(technology, section_main)
-    contact = _create_page(
-        'Contact',
+    PageSection.objects.init_page_section(technology, section_main)
+    contact = Page.objects.init_page(
         'contact',
+        '',
+        'Contact',
         3,
         'web/contact_list.html',
-        False
     )
-    init_page_section(contact, section_main)
+    PageSection.objects.init_page_section(contact, section_main)
