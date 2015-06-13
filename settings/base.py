@@ -161,6 +161,9 @@ THIRD_PARTY_APPS = (
     # 'debug_toolbar',
     'easy_thumbnails',
     'haystack',
+    'rest_framework',
+    # http://www.django-rest-framework.org/api-guide/authentication#tokenauthentication
+    'rest_framework.authtoken',
     'reversion',
 )
 
@@ -196,7 +199,19 @@ LOGIN_REDIRECT_URL = reverse_lazy('crm.ticket.home')
 # will be called.
 # LOGIN_URL = reverse_lazy('login.login')
 
-TASKWARRIOR = get_env_variable("TASKWARRIOR")
+# http://www.django-rest-framework.org/api-guide/authentication#tokenauthentication
+REST_FRAMEWORK = {
+    'COERCE_DECIMAL_TO_STRING': True,
+    # not sure if this is required or not
+    # 'DATETIME_FORMAT': '%Y%m%dT%H%M%SZ',
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.TokenAuthentication',
+    ),
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAdminUser',
+    ),
+    'TEST_REQUEST_DEFAULT_FORMAT': 'json',
+}
 
 LOGGING = {
     'version': 1,

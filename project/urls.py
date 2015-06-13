@@ -1,6 +1,4 @@
 # -*- encoding: utf-8 -*-
-from __future__ import unicode_literals
-
 from django.conf import settings
 from django.conf.urls import (
     include,
@@ -9,6 +7,7 @@ from django.conf.urls import (
 )
 from django.conf.urls.static import static
 from django.contrib import admin
+
 
 admin.autodiscover()
 
@@ -20,6 +19,9 @@ urlpatterns = patterns(
         ),
     url(regex=r'^admin/',
         view=include(admin.site.urls)
+        ),
+    url(regex=r'^api/0.1/',
+        view=include('crm.urls_api')
         ),
     url(regex=r'^cms/',
         view=include('cms.urls.cms')
@@ -36,6 +38,10 @@ urlpatterns = patterns(
     url(regex=r'^search/',
         view=include('search.urls')
         ),
+    url(regex=r'^token/$',
+        view='rest_framework.authtoken.views.obtain_auth_token',
+        name='api.token.auth',
+    ),
     url(regex=r'^',
         view=include('web.urls')
         ),
