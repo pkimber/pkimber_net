@@ -107,6 +107,7 @@ STATICFILES_FINDERS = (
 SECRET_KEY = get_env_variable("SECRET_KEY")
 
 MIDDLEWARE_CLASSES = (
+    'opbeat.contrib.django.middleware.OpbeatAPMMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -161,6 +162,7 @@ THIRD_PARTY_APPS = (
     # 'debug_toolbar',
     'easy_thumbnails',
     'haystack',
+    'opbeat.contrib.django',
     'rest_framework',
     # http://www.django-rest-framework.org/api-guide/authentication#tokenauthentication
     'rest_framework.authtoken',
@@ -198,6 +200,12 @@ LOGIN_REDIRECT_URL = reverse_lazy('crm.ticket.home')
 # must be logged in before accessing the view otherwise this URL
 # will be called.
 # LOGIN_URL = reverse_lazy('login.login')
+
+OPBEAT = {
+    'ORGANIZATION_ID': 'd6a3f85426c24ffea0f855fd7dd8ecee',
+    'APP_ID': '27070f4011',
+    'SECRET_TOKEN': 'e35703b1dd8b0ee9ab8e37409ba5c58c98d3e675',
+}
 
 # http://www.django-rest-framework.org/api-guide/authentication#tokenauthentication
 REST_FRAMEWORK = {
