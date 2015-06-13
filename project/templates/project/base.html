@@ -15,23 +15,20 @@
 
 {% block menu_dash %}
   {% if user.is_staff %}
-    <li {% if 'crm' in path %}class="pure-menu-selected"{% endif %}
-      {% if 'invoice' in path %}class="pure-menu-selected"{% endif %}
-      {% if 'login' in path %}class="pure-menu-selected"{% endif %}
-      >
-      <a href="{% url "crm.ticket.home" %}">
+    <li class="pure-menu-item{% if 'crm' in path %} pure-menu-selected{% elif 'invoice' in path %} pure-menu-selected{% elif 'login' in path %} pure-menu-selected{% endif %}">
+      <a href="{% url 'crm.ticket.home' %}" class="pure-menu-link">
         CRM
       </a>
     </li>
-    <li {% if 'search' in path %}class="pure-menu-selected"{% endif %}>
-      <a href="{% url "search.search" %}">Search</a>
+    <li class="pure-menu-item{% if 'search' in path %} pure-menu-selected{% endif %}">
+      <a href="{% url 'search.search' %}" class="pure-menu-link">Search</a>
     </li>
   {% endif %}
 {% endblock menu_dash %}
 
 {% block menu_extra %}
-  <li>
-    <a href="/howto/">My memory</a>
+  <li class="pure-menu-item">
+    <a href="/howto/" class="pure-menu-link">My memory</a>
   </li>
 {% endblock menu_extra %}
 
