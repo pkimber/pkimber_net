@@ -41,7 +41,7 @@ setup(
             'templates/dash/*.*',
         ],
     },
-    version='0.1.33',
+    version='0.1.34',
     description='my web site',
     author='Patrick Kimber',
     author_email='code@pkimber.net',
