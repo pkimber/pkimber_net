@@ -1,6 +1,4 @@
 # -*- encoding: utf-8 -*-
-from __future__ import unicode_literals
-
 from .local import *
 
 
@@ -14,3 +12,6 @@ DATABASES = {
         'PORT': '',
     }
 }
+
+
+OPBEAT['APP_ID'] = None

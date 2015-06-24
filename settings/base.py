@@ -202,9 +202,9 @@ LOGIN_REDIRECT_URL = reverse_lazy('crm.ticket.home')
 # LOGIN_URL = reverse_lazy('login.login')
 
 OPBEAT = {
-    'ORGANIZATION_ID': 'd6a3f85426c24ffea0f855fd7dd8ecee',
-    'APP_ID': '27070f4011',
-    'SECRET_TOKEN': 'e35703b1dd8b0ee9ab8e37409ba5c58c98d3e675',
+    'ORGANIZATION_ID': get_env_variable('OPBEAT_ORGANIZATION_ID'),
+    'APP_ID': get_env_variable('OPBEAT_APP_ID'),
+    'SECRET_TOKEN': get_env_variable('OPBEAT_SECRET_TOKEN'),
 }
 
 # http://www.django-rest-framework.org/api-guide/authentication#tokenauthentication
