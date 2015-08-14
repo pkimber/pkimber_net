@@ -161,6 +161,7 @@ THIRD_PARTY_APPS = (
     # 'django_extensions',
     # 'debug_toolbar',
     'easy_thumbnails',
+    'formtools',
     'haystack',
     'opbeat.contrib.django',
     'rest_framework',

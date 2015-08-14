@@ -23,8 +23,8 @@ urlpatterns = patterns(
     url(regex=r'^api/0.1/',
         view=include('crm.urls_api')
         ),
-    url(regex=r'^cms/',
-        view=include('cms.urls.cms')
+    url(regex=r'^',
+        view=include('block.urls.block')
         ),
     url(regex=r'^crm/',
         view=include('crm.urls')
@@ -47,7 +47,7 @@ urlpatterns = patterns(
         ),
     # this url include should come last
     url(regex=r'^',
-        view=include('cms.urls.page')
+        view=include('block.urls.cms')
         ),
 )
 
