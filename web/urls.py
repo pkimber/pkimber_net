@@ -5,6 +5,7 @@ from django.conf.urls import (
 )
 from django.contrib import admin
 
+from block.models import Page
 from block.views import (
     PageDesignView,
     PageView,
@@ -19,6 +20,7 @@ from .views import (
 
 
 from .models import PAGE_HOME
+from .views import EnquiryCreateView
 
 
 admin.autodiscover()
@@ -26,6 +28,12 @@ admin.autodiscover()
 
 urlpatterns = patterns(
     '',
+    # contact form
+    url(regex=r'^contact/$',
+        view=EnquiryCreateView.as_view(),
+        kwargs=dict(page=Page.CUSTOM, menu='contact'),
+        name='web.contact'
+        ),
     # Main
     url(regex=r'^main/create/(?P<page>[-\w\d]+)/(?P<section>[-\w\d]+)/$',
         view=MainCreateView.as_view(),

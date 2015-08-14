@@ -14,4 +14,17 @@
     {% include 'web/_content_left_small.html' %}
   {% endfor %}
   {% if design %}{% block_add main_create_url %}{% endif %}
+  {% if design %}
+    <p>
+      <a href="{% url 'booking.list' %}">
+        <i class="fa fa-comments-o"></i>
+        Review enquiries
+      </a>
+    </p>
+    <small>The contact form will appear here on the live site.</small>
+  {% else %}
+    {% if form %}
+      {% include '_form.html' %}
+    {% endif %}
+  {% endif %}
 {% endblock content %}

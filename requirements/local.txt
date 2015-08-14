@@ -5,6 +5,7 @@
 -e ../../app/cms
 -e ../../app/compose
 -e ../../app/crm
+-e ../../app/enquiry
 -e ../../app/finance
 -e ../../app/invoice
 -e ../../app/login

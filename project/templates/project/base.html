@@ -1,4 +1,4 @@
-{% extends 'cms/base.html' %}
+{% extends 'block/base.html' %}
 {% load staticfiles %}
 
 {% block title %}
@@ -29,6 +29,9 @@
 {% block menu_extra %}
   <li class="pure-menu-item">
     <a href="/howto/" class="pure-menu-link">My memory</a>
+  </li>
+  <li class="pure-menu-item{% if 'contact' in path %} pure-menu-selected{% endif %}">
+    <a href="{% url 'web.contact' %}" class="pure-menu-link">Contact</a>
   </li>
 {% endblock menu_extra %}
 

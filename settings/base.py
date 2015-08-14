@@ -156,6 +156,7 @@ DJANGO_APPS = (
 )
 
 THIRD_PARTY_APPS = (
+    'captcha',
     'celery_haystack',
     'compressor',
     # 'django_extensions',
@@ -177,6 +178,7 @@ LOCAL_APPS = (
     'cms',
     'crm',
     'dash',
+    'enquiry',
     'finance',
     'invoice',
     'login',
@@ -207,6 +209,11 @@ OPBEAT = {
     'APP_ID': get_env_variable('OPBEAT_APP_ID'),
     'SECRET_TOKEN': get_env_variable('OPBEAT_SECRET_TOKEN'),
 }
+
+# https://github.com/praekelt/django-recaptcha
+NOCAPTCHA = True
+RECAPTCHA_PUBLIC_KEY = get_env_variable('NORECAPTCHA_SITE_KEY')
+RECAPTCHA_PRIVATE_KEY = get_env_variable('NORECAPTCHA_SECRET_KEY')
 
 # http://www.django-rest-framework.org/api-guide/authentication#tokenauthentication
 REST_FRAMEWORK = {

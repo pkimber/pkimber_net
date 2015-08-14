@@ -46,10 +46,19 @@ def init_app_web():
     )
     PageSection.objects.init_page_section(technology, section_main)
     contact = Page.objects.init_page(
+        'custom',
         'contact',
-        '',
         'Contact',
         3,
         'web/contact_list.html',
+        is_custom=True,
     )
     PageSection.objects.init_page_section(contact, section_main)
+    thankyou = Page.objects.init_page(
+        'contact',
+        'thankyou',
+        'Thank you',
+        0,
+        'web/contact_list.html',
+    )
+    PageSection.objects.init_page_section(thankyou, section_main)
