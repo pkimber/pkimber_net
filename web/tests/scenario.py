@@ -46,7 +46,7 @@ def init_app_web():
     )
     PageSection.objects.init_page_section(technology, section_main)
     contact = Page.objects.init_page(
-        'custom',
+        Page.CUSTOM,
         'contact',
         'Contact',
         3,
