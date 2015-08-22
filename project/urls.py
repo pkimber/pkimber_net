@@ -41,7 +41,7 @@ urlpatterns = patterns(
     url(regex=r'^token/$',
         view='rest_framework.authtoken.views.obtain_auth_token',
         name='api.token.auth',
-    ),
+        ),
     url(regex=r'^',
         view=include('web.urls')
         ),
