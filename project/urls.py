@@ -23,8 +23,11 @@ urlpatterns = patterns(
     url(regex=r'^api/0.1/',
         view=include('crm.urls_api')
         ),
-    url(regex=r'^',
+    url(regex=r'^block/',
         view=include('block.urls.block')
+        ),
+    url(regex=r'^compose/',
+        view=include('compose.urls.compose')
         ),
     url(regex=r'^crm/',
         view=include('crm.urls')

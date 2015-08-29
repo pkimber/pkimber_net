@@ -8,7 +8,7 @@ from django.contrib import admin
 from block.models import Page
 from block.views import (
     PageDesignView,
-    PageView,
+    PageTemplateView,
 )
 
 from .views import (
@@ -53,7 +53,7 @@ urlpatterns = patterns(
         ),
     # pages using the 'block' app
     url(regex=r'^$',
-        view=PageView.as_view(),
+        view=PageTemplateView.as_view(),
         kwargs=dict(page=PAGE_HOME),
         name='project.home'
         ),
@@ -62,7 +62,7 @@ urlpatterns = patterns(
         name='project.page.design'
         ),
     url(regex=r'^(?P<page>[-\w\d]+)/$',
-        view=PageView.as_view(),
+        view=PageTemplateView.as_view(),
         name='project.page'
         ),
 )

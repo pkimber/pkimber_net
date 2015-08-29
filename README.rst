@@ -32,15 +32,7 @@ Usage
 
 ::
 
-  py.test -x && \
-      touch temp.db && rm temp.db && \
-      django-admin.py migrate --noinput && \
-      django-admin.py init_app_block && \
-      django-admin.py demo_data_login && \
-      django-admin.py demo_data_crm && \
-      django-admin.py demo_data_invoice && \
-      django-admin.py init_project && \
-      django-admin.py runserver
+  ./init_dev.sh
 
 Browse to http://localhost:8000/crm/contact/::
 

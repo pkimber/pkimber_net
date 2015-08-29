@@ -1,3 +1,4 @@
+# -*- encoding: utf-8 -*-
 """
 Django settings for app project.
 """
@@ -172,10 +173,9 @@ THIRD_PARTY_APPS = (
 )
 
 LOCAL_APPS = (
-    'project',
     'base',
     'block',
-    'cms',
+    'compose',
     'crm',
     'dash',
     'enquiry',
@@ -183,6 +183,7 @@ LOCAL_APPS = (
     'invoice',
     'login',
     'mail',
+    'project',
     'search',
     'web',
 )
