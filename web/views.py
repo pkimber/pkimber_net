@@ -1,12 +1,15 @@
 # -*- encoding: utf-8 -*-
 from django.views.generic import CreateView
 
-from block.views import PageFormMixin
+from block.views import (
+    CmsMixin,
+    PageFormMixin,
+)
 from enquiry.forms import EnquiryForm
 from enquiry.views import Enquiry
 
 
-class EnquiryCreateView(PageFormMixin, CreateView):
+class EnquiryCreateView(CmsMixin, PageFormMixin, CreateView):
 
     form_class = EnquiryForm
     model = Enquiry
