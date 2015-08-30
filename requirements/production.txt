@@ -1,9 +1,9 @@
 -r base.txt
 kb-base==0.1.62
 kb-block==0.1.38
-kb-compose==0.0.07
+kb-compose==0.0.08
 kb-crm==0.1.17
-kb-enquiry==0.1.16
+kb-enquiry==0.1.17
 kb-finance==0.1.04
 kb-invoice==0.1.23
 kb-login==0.1.35

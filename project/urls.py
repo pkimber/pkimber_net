@@ -35,6 +35,9 @@ urlpatterns = patterns(
     url(regex=r'^dash/',
         view=include('dash.urls')
         ),
+    url(regex=r'^enquiry/',
+        view=include('enquiry.urls')
+        ),
     url(regex=r'^invoice/',
         view=include('invoice.urls')
         ),
