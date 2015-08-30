@@ -1,6 +1,7 @@
 # -*- encoding: utf-8 -*-
 from django.views.generic import CreateView
 
+from block.models import Page
 from block.views import (
     CmsMixin,
     PageFormMixin,

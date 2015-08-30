@@ -35,6 +35,12 @@ CELERYBEAT_SCHEDULE = {
     },
 }
 
+# mandrill
+EMAIL_BACKEND = 'djrill.mail.backends.djrill.DjrillBackend'
+MAIL_TEMPLATE_TYPE = 'mandrill'
+MANDRILL_API_KEY = get_env_variable('MANDRILL_API_KEY')
+MANDRILL_USER_NAME = get_env_variable('MANDRILL_USER_NAME')
+
 # FTP upload 'static' folder
 FTP_STATIC_DIR = None
 FTP_STATIC_URL = None
