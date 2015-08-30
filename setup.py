@@ -32,6 +32,9 @@ setup(
         ],
 
         'web': [
+            'static/*.*',
+            'static/web/*.*',
+            'static/web/css/*.*',
             'templates/*.*',
             'templates/web/*.*',
         ],
@@ -41,7 +44,7 @@ setup(
             'templates/dash/*.*',
         ],
     },
-    version='0.1.36',
+    version='0.1.37',
     description='my web site',
     author='Patrick Kimber',
     author_email='code@pkimber.net',
@@ -55,6 +58,7 @@ setup(
         'Operating System :: OS Independent',
         'Programming Language :: Python',
         'Programming Language :: Python :: 3',
+        'Framework :: Django :: 1.8',
         'Topic :: Office/Business :: Scheduling',
     ],
     long_description=get_readme(),
