@@ -11,12 +11,10 @@
 -e ../../app/mail
 -e ../../app/search
 devpi-client
-fabric
 factory-boy
-gitpython
-hgapi
-ipdb
+pytest-cov
 pytest-django
 pytest-flakes
 pytest-pep8
-walkdir
+pytest-sugar
+pytest-watch
