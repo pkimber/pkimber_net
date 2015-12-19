@@ -8,5 +8,5 @@ kb-finance==0.1.04
 kb-invoice==0.1.23
 kb-login==0.1.35
 kb-mail==0.1.27
-kb-report==0.0.01
+kb-report==0.0.02
 kb-search==0.1.17
