@@ -17,10 +17,7 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         self.stdout.write('Pages - Contact')
-        template = Template.objects.init_template(
-            'Article',
-            'compose/page_article.html'
-        )
+        template = Template.objects.init_template('Article', 'compose/page_article.html')
         Page.objects.init_page(
             Page.CUSTOM,
             'contact',
