@@ -19,7 +19,7 @@ class Command(BaseCommand):
         self.stdout.write('Pages - Contact')
         template = Template.objects.init_template(
             'Article',
-            'compose/page_article.html',
+            'compose/page_article.html'
         )
         Page.objects.init_page(
             Page.CUSTOM,
