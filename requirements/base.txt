@@ -3,7 +3,7 @@ celery-haystack==0.9
 celery==3.1.18
 cssselect==0.9.1
 django-braces==1.8.1
-django-celery-transactions==0.3.2
+django-celery-transactions==0.3.6
 django-compressor==1.5
 django-extensions==1.5.7
 django-haystack==2.4.1
