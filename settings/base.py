@@ -150,6 +150,7 @@ DJANGO_APPS = (
     'django.contrib.humanize',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'django.contrib.sitemaps',
     'django.contrib.staticfiles',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
