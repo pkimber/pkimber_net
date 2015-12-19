@@ -1,5 +1,5 @@
 -r base.txt
-kb-base==0.1.76
+kb-base==0.1.77
 kb-block==0.1.49
 kb-compose==0.0.19
 kb-crm==0.1.19
