@@ -5,7 +5,10 @@ from django.core.urlresolvers import reverse
 
 from base.tests.test_utils import PermTestCase
 from block.models import Page
-from block.tests.factories import PageFactory
+from block.tests.factories import (
+    PageFactory,
+    TemplateFactory,
+)
 
 
 class TestViewPerm(PermTestCase):
@@ -14,7 +17,9 @@ class TestViewPerm(PermTestCase):
         PageFactory(
             slug=Page.CUSTOM,
             slug_menu='contact',
-            template_name='compose/page_article.html',
+            template=TemplateFactory(
+                template_name='compose/page_article.html'
+            ),
             is_custom=True,
         )
         url = reverse('web.contact')
@@ -25,7 +30,9 @@ class TestViewPerm(PermTestCase):
             is_home=True,
             slug='home',
             slug_menu='',
-            template_name='compose/page_article.html',
+            template=TemplateFactory(
+                template_name='compose/page_article.html'
+            ),
         )
         url = reverse('project.home')
         self.assert_any(url)

@@ -1,0 +1,11 @@
+base|1136-delete-image-from-library
+block|1136-delete-image-from-library
+compose|1136-delete-image-from-library
+crm|master
+enquiry|master
+finance|master
+invoice|master
+login|master
+mail|master
+report|master
+search|master

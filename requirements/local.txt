@@ -9,6 +9,7 @@
 -e ../../app/invoice
 -e ../../app/login
 -e ../../app/mail
+-e ../../app/report
 -e ../../app/search
 devpi-client
 factory-boy

@@ -48,6 +48,9 @@ urlpatterns = patterns(
         view='rest_framework.authtoken.views.obtain_auth_token',
         name='api.token.auth',
         ),
+    url(regex=r'^wizard/',
+        view=include('block.urls.wizard')
+        ),
     url(regex=r'^',
         view=include('web.urls')
         ),

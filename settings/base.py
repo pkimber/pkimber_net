@@ -163,7 +163,6 @@ THIRD_PARTY_APPS = (
     # 'django_extensions',
     # 'debug_toolbar',
     'easy_thumbnails',
-    'formtools',
     'haystack',
     'opbeat.contrib.django',
     'rest_framework',
@@ -184,6 +183,7 @@ LOCAL_APPS = (
     'login',
     'mail',
     'project',
+    'report',
     'search',
     'web',
 )

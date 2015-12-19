@@ -5,7 +5,10 @@ then re-insert e.g. for setting up the main menu navigation.
 """
 from django.core.management.base import BaseCommand
 
-from block.models import Page
+from block.models import (
+    Page,
+    Template,
+)
 
 
 class Command(BaseCommand):
@@ -14,12 +17,16 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         self.stdout.write('Pages - Contact')
+        template = Template.objects.init_template(
+            'Article',
+            'compose/page_article.html',
+        )
         Page.objects.init_page(
             Page.CUSTOM,
             'contact',
             'Contact',
             1,
-            'compose/page_article.html',
+            template,
             is_custom=True,
         )
         Page.objects.init_page(
@@ -27,6 +34,6 @@ class Command(BaseCommand):
             'thankyou',
             'Thank You',
             0,
-            'compose/page_article.html',
+            template,
         )
         print("Project initialised...")
