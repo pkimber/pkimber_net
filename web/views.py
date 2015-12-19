@@ -5,9 +5,18 @@ from block.models import Page
 from block.views import (
     CmsMixin,
     PageFormMixin,
+    PageTemplateView,
 )
 from enquiry.forms import EnquiryForm
 from enquiry.views import Enquiry
+
+
+class CmsHomePageView(CmsMixin, PageTemplateView):
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context.update(dict(twitter='pkimber'))
+        return context
 
 
 class EnquiryCreateView(CmsMixin, PageFormMixin, CreateView):

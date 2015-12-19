@@ -5,11 +5,20 @@ from django.conf.urls import (
 )
 
 from block.models import Page
-from .views import EnquiryCreateView
+from .views import (
+    CmsHomePageView,
+    EnquiryCreateView,
+)
 
 
 urlpatterns = patterns(
     '',
+    # home
+    url(regex=r'^$',
+        view=CmsHomePageView.as_view(),
+        kwargs=dict(page=Page.HOME),
+        name='project.home'
+        ),
     # contact form
     url(regex=r'^contact/$',
         view=EnquiryCreateView.as_view(),

@@ -1,6 +1,5 @@
 # -*- encoding: utf-8 -*-
 from django.core.checks import (
-    Error,
     register,
     Tags,
 )
