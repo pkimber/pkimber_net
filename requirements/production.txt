@@ -1,7 +1,7 @@
 -r base.txt
-kb-base==0.1.77
-kb-block==0.1.49
-kb-compose==0.0.19
+kb-base==0.1.78
+kb-block==0.1.50
+kb-compose==0.0.20
 kb-crm==0.1.19
 kb-enquiry==0.1.22
 kb-finance==0.1.04
