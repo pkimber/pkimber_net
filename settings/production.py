@@ -25,10 +25,22 @@ DATABASES = {
 }
 
 # Celery
+from kombu import Exchange, Queue
+# transport
 BROKER_URL = 'redis://localhost:6379/0'
 CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'
-# https://kfalck.net/2013/02/21/run-multiple-celeries-on-a-single-redis
-CELERY_DEFAULT_QUEUE = '{}'.format(SITE_NAME)
+# number of worker processes (will be 3 == controller, worker and beat)
+CELERYD_CONCURRENCY = 1
+# rate limits
+CELERY_DISABLE_RATE_LIMITS = True
+# serializer
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_ACCEPT_CONTENT = ['json']
+# queue
+CELERY_DEFAULT_QUEUE = DATABASE
+CELERY_QUEUES = (
+    Queue(DATABASE, Exchange(DATABASE), routing_key=DATABASE),
+)
 
 from celery.schedules import crontab
 CELERYBEAT_SCHEDULE = {
