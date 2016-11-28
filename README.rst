@@ -12,10 +12,8 @@ Virtual Environment
 
 ::
 
-  pyvenv-3.4 --without-pip venv-pkimber_net
+  virtualenv --python=python3 venv-pkimber_net
   source venv-pkimber_net/bin/activate
-  wget https://raw.githubusercontent.com/pypa/pip/master/contrib/get-pip.py
-  python get-pip.py
 
   pip install -r requirements/local.txt
 
@@ -49,4 +47,4 @@ If using test Postgres data downloaded from the live site::
 Release and Deploy
 ==================
 
-https://www.pkimber.net/open/
+https://www.kbsoftware.co.uk/docs/

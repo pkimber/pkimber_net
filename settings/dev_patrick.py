@@ -5,13 +5,14 @@ from .local import *
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'test_pkimber_net_patrick',
+        'NAME': 'test_www_pkimber_net_patrick',
         'USER': '',
         'PASSWORD': '',
         'HOST': '',
         'PORT': '',
     }
 }
+
 
 #DATABASES = {
 #    'default': {

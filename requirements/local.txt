@@ -3,6 +3,7 @@
 -e ../../app/base
 -e ../../app/block
 -e ../../app/compose
+-e ../../app/contact
 -e ../../app/crm
 -e ../../app/enquiry
 -e ../../app/finance
@@ -11,7 +12,7 @@
 -e ../../app/mail
 -e ../../app/report
 -e ../../app/search
-devpi-client
+-e ../../app/stock
 factory-boy
 pytest-cov
 pytest-django

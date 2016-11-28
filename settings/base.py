@@ -101,7 +101,6 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
     #'django.contrib.staticfiles.finders.DefaultStorageFinder',
-    'compressor.finders.CompressorFinder',
 )
 
 # Make this unique, and don't share it with anybody.
@@ -161,7 +160,6 @@ DJANGO_APPS = (
 THIRD_PARTY_APPS = (
     'captcha',
     'celery_haystack',
-    'compressor',
     # 'django_extensions',
     # 'debug_toolbar',
     'easy_thumbnails',
@@ -177,6 +175,7 @@ LOCAL_APPS = (
     'base',
     'block',
     'compose',
+    'contact',
     'crm',
     'dash',
     'enquiry',
@@ -187,12 +186,13 @@ LOCAL_APPS = (
     'project',
     'report',
     'search',
+    'stock',
     'web',
 )
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
-CONTACT_MODEL = 'crm.Contact'
+CONTACT_MODEL = 'contact.Contact'
 
 DEFAULT_FROM_EMAIL = 'web@pkimber.net'
 # See the list of constants at the top of 'mail.models'
@@ -244,7 +244,7 @@ LOGGING = {
     'handlers': {
         'null': {
             'level':'DEBUG',
-                'class':'django.utils.log.NullHandler',
+                'class': 'logging.NullHandler',
         },
         'logfile': {
             'level':'DEBUG',
