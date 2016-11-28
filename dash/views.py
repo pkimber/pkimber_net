@@ -1,14 +1,15 @@
 # -*- encoding: utf-8 -*-
-from __future__ import unicode_literals
+from django.views.generic import DetailView, TemplateView
 
-from django.views.generic import TemplateView
-
-from braces.views import (
-    LoginRequiredMixin,
-    StaffuserRequiredMixin,
-)
+from braces.views import LoginRequiredMixin, StaffuserRequiredMixin
 
 from base.view_utils import BaseMixin
+from crm.views import CrmContactDetailMixin
+
+
+class ContactDetailView(
+        LoginRequiredMixin, CrmContactDetailMixin, BaseMixin, DetailView):
+    pass
 
 
 class HomeView(

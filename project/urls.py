@@ -1,13 +1,11 @@
 # -*- encoding: utf-8 -*-
 from django.conf import settings
-from django.conf.urls import (
-    include,
-    patterns,
-    url,
-)
+from django.conf.urls import include, url
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.contrib.sitemaps import GenericSitemap
+from django.contrib.sitemaps.views import sitemap
+from rest_framework.authtoken import views
 
 from block.models import Page
 
@@ -25,8 +23,7 @@ sitemaps = {
 admin.autodiscover()
 
 
-urlpatterns = patterns(
-    '',
+urlpatterns = [
     url(regex=r'^',
         view=include('login.urls')
         ),
@@ -41,6 +38,9 @@ urlpatterns = patterns(
         ),
     url(regex=r'^compose/',
         view=include('compose.urls.compose')
+        ),
+    url(regex=r'^contact/',
+        view=include('contact.urls')
         ),
     url(regex=r'^crm/',
         view=include('crm.urls')
@@ -58,11 +58,11 @@ urlpatterns = patterns(
         view=include('search.urls')
         ),
     url(regex=r'^sitemap\.xml$',
-        view='django.contrib.sitemaps.views.sitemap',
+        view=sitemap,
         kwargs={'sitemaps': sitemaps},
         ),
     url(regex=r'^token/$',
-        view='rest_framework.authtoken.views.obtain_auth_token',
+        view=views.obtain_auth_token,
         name='api.token.auth',
         ),
     url(regex=r'^wizard/',
@@ -75,7 +75,7 @@ urlpatterns = patterns(
     url(regex=r'^',
         view=include('block.urls.cms')
         ),
-)
+]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 #   ^ helper function to return a URL pattern for serving files in debug mode.

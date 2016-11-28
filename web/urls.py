@@ -1,18 +1,11 @@
 # -*- encoding: utf-8 -*-
-from django.conf.urls import (
-    patterns,
-    url,
-)
+from django.conf.urls import url
 
 from block.models import Page
-from .views import (
-    CmsHomePageView,
-    EnquiryCreateView,
-)
+from .views import CmsHomePageView, EnquiryCreateView
 
 
-urlpatterns = patterns(
-    '',
+urlpatterns = [
     # home
     url(regex=r'^$',
         view=CmsHomePageView.as_view(),
@@ -25,4 +18,4 @@ urlpatterns = patterns(
         kwargs=dict(page=Page.CUSTOM, menu='contact'),
         name='web.contact'
         ),
-)
+]

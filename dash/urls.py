@@ -1,19 +1,14 @@
 # -*- encoding: utf-8 -*-
-from __future__ import unicode_literals
+from django.conf.urls import url
 
-from django.conf.urls import (
-    patterns,
-    url,
-)
-
-from .views import (
-    HomeView,
-    SettingsView,
-)
+from .views import ContactDetailView, HomeView, SettingsView
 
 
-urlpatterns = patterns(
-    '',
+urlpatterns = [
+    url(regex=r'^contact/(?P<slug>[-\w\d]+)/$',
+        view=ContactDetailView.as_view(),
+        name='contact.detail'
+        ),
     url(regex=r'^$',
         view=HomeView.as_view(),
         name='project.dash'
@@ -22,4 +17,4 @@ urlpatterns = patterns(
         view=SettingsView.as_view(),
         name='project.settings'
         ),
-)
+]
