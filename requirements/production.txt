@@ -2,6 +2,7 @@
 kb-base==0.1.96
 kb-block==0.1.63
 kb-compose==0.0.27
+kb-contact==0.0.10
 kb-crm==0.1.23
 kb-enquiry==0.1.27
 kb-finance==0.1.08
