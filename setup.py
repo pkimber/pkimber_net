@@ -20,7 +20,7 @@ def get_readme():
 
 setup(
     name='kb-pkimber-net',
-    packages=['project', 'project.templatetags', 'project.management', 'project.management.commands', 'web', 'web.migrations', 'web.tests', 'dash', 'dash.tests', 'settings'],
+    packages=['web', 'web.tests', 'web.migrations', 'project', 'project.management', 'project.management.commands', 'project.templatetags', 'dash', 'dash.tests', 'settings'],
     package_data={
         'project': [
             'static/*.*',
@@ -41,10 +41,11 @@ setup(
 
         'dash': [
             'templates/*.*',
+            'templates/contact/*.*',
             'templates/dash/*.*',
         ],
     },
-    version='0.1.52',
+    version='0.1.53',
     description='my web site',
     author='Patrick Kimber',
     author_email='code@pkimber.net',
