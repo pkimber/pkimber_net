@@ -11,3 +11,4 @@ kb-login==0.1.53
 kb-mail==0.1.43
 kb-report==0.0.03
 kb-search==0.1.24
+kb-stock==0.1.26
