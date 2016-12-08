@@ -1,14 +1,14 @@
 -r base.txt
-kb-base==0.1.96
-kb-block==0.1.63
+kb-base==0.1.97
+kb-block==0.1.64
 kb-compose==0.0.27
 kb-contact==0.0.11
-kb-crm==0.1.23
+kb-crm==0.1.25
 kb-enquiry==0.1.27
 kb-finance==0.1.08
 kb-invoice==0.1.29
 kb-login==0.1.53
-kb-mail==0.1.43
+kb-mail==0.1.44
 kb-report==0.0.03
 kb-search==0.1.24
 kb-stock==0.1.26
