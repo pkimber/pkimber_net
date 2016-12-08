@@ -20,7 +20,7 @@ def get_readme():
 
 setup(
     name='kb-pkimber-net',
-    packages=['web', 'web.tests', 'web.migrations', 'project', 'project.management', 'project.management.commands', 'project.templatetags', 'dash', 'dash.tests', 'settings'],
+    packages=['project', 'project.management', 'project.management.commands', 'project.templatetags', 'web', 'web.tests', 'web.migrations', 'settings', 'dash', 'dash.tests'],
     package_data={
         'project': [
             'static/*.*',
@@ -45,10 +45,10 @@ setup(
             'templates/dash/*.*',
         ],
     },
-    version='0.1.57',
+    version='0.1.58',
     description='my web site',
-    author='Patrick Kimber',
-    author_email='code@pkimber.net',
+    author='Malcolm Dinsmore',
+    author_email='zebyea@gmail.com',
     url='git@github.com:pkimber/pkimber_net.git',
     classifiers=[
         'Development Status :: 1 - Planning',

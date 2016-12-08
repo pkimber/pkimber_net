@@ -1,7 +1,7 @@
-recursive-include web/static *
-recursive-include web/templates *
 recursive-include project/static *
 recursive-include project/templates *
+recursive-include web/static *
+recursive-include web/templates *
 recursive-include dash/templates *
 
 include LICENSE
