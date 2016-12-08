@@ -169,6 +169,7 @@ THIRD_PARTY_APPS = (
     # http://www.django-rest-framework.org/api-guide/authentication#tokenauthentication
     'rest_framework.authtoken',
     'reversion',
+    'sparkpost',
 )
 
 LOCAL_APPS = (
@@ -195,8 +196,16 @@ INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 CONTACT_MODEL = 'contact.Contact'
 
 DEFAULT_FROM_EMAIL = 'web@pkimber.net'
-# See the list of constants at the top of 'mail.models'
-MAIL_TEMPLATE_TYPE = 'django'
+
+# sparkpost
+EMAIL_BACKEND = "sparkpost.django.email_backend.SparkPostEmailBackend"
+MAIL_TEMPLATE_TYPE = 'sparkpost'
+SPARKPOST_API_KEY = get_env_variable('SPARKPOST_API_KEY')
+SPARKPOST_OPTIONS = {
+    'track_opens': False,
+    'track_clicks': False,
+    'transactional': True,
+}
 
 # URL where requests are redirected after login when the contrib.auth.login
 # view gets no next parameter.
