@@ -7,7 +7,7 @@ import os
 # Normally you should not import ANYTHING from Django directly into your
 # settings, but 'ImproperlyConfigured' is an exception.
 from django.core.exceptions import ImproperlyConfigured
-from django.core.urlresolvers import reverse_lazy
+from django.urls import reverse_lazy
 
 
 def get_env_variable(key):
@@ -106,8 +106,7 @@ STATICFILES_FINDERS = (
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = get_env_variable("SECRET_KEY")
 
-MIDDLEWARE_CLASSES = (
-    'opbeat.contrib.django.middleware.OpbeatAPMMiddleware',
+MIDDLEWARE = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -134,6 +133,7 @@ TEMPLATES = [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.i18n',
                 'django.template.context_processors.media',
+                'django.template.context_processors.request',
                 'django.template.context_processors.static',
                 'django.template.context_processors.tz',
                 'django.contrib.messages.context_processors.messages',
@@ -159,17 +159,15 @@ DJANGO_APPS = (
 
 THIRD_PARTY_APPS = (
     'captcha',
-    'celery_haystack',
     # 'django_extensions',
     # 'debug_toolbar',
     'easy_thumbnails',
-    'haystack',
-    'opbeat.contrib.django',
     'rest_framework',
     # http://www.django-rest-framework.org/api-guide/authentication#tokenauthentication
     'rest_framework.authtoken',
     'reversion',
     'sparkpost',
+    'taggit',
 )
 
 LOCAL_APPS = (
@@ -216,12 +214,6 @@ LOGIN_REDIRECT_URL = reverse_lazy('crm.ticket.home')
 # will be called.
 # LOGIN_URL = reverse_lazy('login.login')
 
-OPBEAT = {
-    'ORGANIZATION_ID': get_env_variable('OPBEAT_ORGANIZATION_ID'),
-    'APP_ID': get_env_variable('OPBEAT_APP_ID'),
-    'SECRET_TOKEN': get_env_variable('OPBEAT_SECRET_TOKEN'),
-}
-
 # https://github.com/praekelt/django-recaptcha
 NOCAPTCHA = True
 RECAPTCHA_PUBLIC_KEY = get_env_variable('NORECAPTCHA_SITE_KEY')
@@ -258,7 +250,7 @@ LOGGING = {
         'logfile': {
             'level':'DEBUG',
             'class':'logging.handlers.RotatingFileHandler',
-            'filename': "logfile",
+            'filename': "logger.log",
             'maxBytes': 500000,
             'backupCount': 10,
             'formatter': 'standard',

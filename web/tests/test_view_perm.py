@@ -1,14 +1,11 @@
 # -*- encoding: utf-8 -*-
 import pytest
 
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 
 from base.tests.test_utils import PermTestCase
 from block.models import Page
-from block.tests.factories import (
-    PageFactory,
-    TemplateFactory,
-)
+from block.tests.factories import PageFactory, TemplateFactory
 
 
 class TestViewPerm(PermTestCase):

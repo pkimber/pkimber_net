@@ -25,7 +25,6 @@ MANIFEST
 # Unit test / coverage reports
 .cache/
 .coverage
-logfile
 .tox
 nosetests.xml
 
@@ -39,8 +38,8 @@ nosetests.xml
 
 # dev
 .cache
-logfile
-logfile.*
+.pytest_cache/
+logger.*
 media
 media-private
 temp.db

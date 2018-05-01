@@ -39,7 +39,7 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(primary_key=True, verbose_name='ID', serialize=False, auto_created=True)),
                 ('created', models.DateTimeField(auto_now_add=True)),
                 ('modified', models.DateTimeField(auto_now=True)),
-                ('page_section', models.ForeignKey(to='block.PageSection')),
+                ('page_section', models.ForeignKey(to='block.PageSection', on_delete=models.CASCADE)),
             ],
             options={
                 'verbose_name': 'Block',
@@ -51,25 +51,25 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='main',
             name='block',
-            field=models.ForeignKey(related_name='content', to='web.MainBlock'),
+            field=models.ForeignKey(related_name='content', to='web.MainBlock', on_delete=models.CASCADE),
             preserve_default=True,
         ),
         migrations.AddField(
             model_name='main',
             name='edit_state',
-            field=models.ForeignKey(default=block.models._default_edit_state, to='block.EditState'),
+            field=models.ForeignKey(default=block.models._default_edit_state, to='block.EditState', on_delete=models.CASCADE),
             preserve_default=True,
         ),
         migrations.AddField(
             model_name='main',
             name='moderate_state',
-            field=models.ForeignKey(default=block.models._default_moderate_state, to='block.ModerateState'),
+            field=models.ForeignKey(default=block.models._default_moderate_state, to='block.ModerateState', on_delete=models.CASCADE),
             preserve_default=True,
         ),
         migrations.AddField(
             model_name='main',
             name='user_moderated',
-            field=models.ForeignKey(related_name='+', null=True, blank=True, to=settings.AUTH_USER_MODEL),
+            field=models.ForeignKey(related_name='+', null=True, blank=True, to=settings.AUTH_USER_MODEL, on_delete=models.CASCADE),
             preserve_default=True,
         ),
         migrations.AlterUniqueTogether(

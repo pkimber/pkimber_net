@@ -1,2 +1,7 @@
---ignore-dir=venv-pkimber_net
+--ignore-dir=.egg-info
+--ignore-dir=.pytest_cache
 --ignore-dir=venv-pkimber
+--ignore-dir=venv-pkimber-net
+--ignore-file=ext:.1
+--ignore-file=ext:log
+--ignore-file=is:MANIFEST

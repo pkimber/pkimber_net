@@ -5,6 +5,7 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.contrib.sitemaps import GenericSitemap
 from django.contrib.sitemaps.views import sitemap
+from django.urls import path
 from rest_framework.authtoken import views
 
 from block.models import Page
@@ -24,11 +25,9 @@ admin.autodiscover()
 
 
 urlpatterns = [
+    path('admin/', admin.site.urls),
     url(regex=r'^',
         view=include('login.urls')
-        ),
-    url(regex=r'^admin/',
-        view=include(admin.site.urls)
         ),
     url(regex=r'^api/0.1/',
         view=include('crm.urls_api')

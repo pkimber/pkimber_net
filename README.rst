@@ -12,8 +12,8 @@ Virtual Environment
 
 ::
 
-  virtualenv --python=python3 venv-pkimber_net
-  source venv-pkimber_net/bin/activate
+  virtualenv --python=python3 venv-pkimber-net
+  source venv-pkimber-net/bin/activate
 
   pip install -r requirements/local.txt
 
