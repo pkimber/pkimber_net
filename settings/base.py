@@ -113,6 +113,7 @@ MIDDLEWARE = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'elasticapm.contrib.django.middleware.TracingMiddleware',
     'reversion.middleware.RevisionMiddleware',
     # 'debug_toolbar.middleware.DebugToolbarMiddleware',
 )
@@ -162,6 +163,8 @@ THIRD_PARTY_APPS = (
     # 'django_extensions',
     # 'debug_toolbar',
     'easy_thumbnails',
+    'elasticapm.contrib.django',
+    'mptt',
     'rest_framework',
     # http://www.django-rest-framework.org/api-guide/authentication#tokenauthentication
     'rest_framework.authtoken',

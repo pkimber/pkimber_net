@@ -50,20 +50,14 @@ CELERYBEAT_SCHEDULE = {
     },
 }
 
+ELASTIC_APM = {
+    'SERVICE_NAME': DATABASE,
+    'SERVER_URL': get_env_variable('ELASTIC_APM_SERVER_URL'),
+}
+
 # FTP upload 'static' folder
 FTP_STATIC_DIR = None
 FTP_STATIC_URL = None
-
-HAYSTACK_CONNECTIONS = {
-    'default': {
-        'BATCH_SIZE': 100,
-        'ENGINE': 'haystack.backends.elasticsearch_backend.ElasticsearchSearchEngine',
-        'INDEX_NAME': '{}'.format(SITE_NAME),
-        'TIMEOUT': 60 * 5,
-        'URL': 'http://127.0.0.1:9200/',
-    },
-}
-HAYSTACK_SIGNAL_PROCESSOR = 'celery_haystack.signals.CelerySignalProcessor'
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/media/"
