@@ -20,8 +20,16 @@ def get_readme():
 
 setup(
     name='kb-pkimber-net',
-    packages=['project', 'project.management', 'project.management.commands', 'project.templatetags', 'web', 'web.tests', 'web.migrations', 'settings', 'dash', 'dash.tests'],
+    packages=['web', 'web.tests', 'web.migrations', 'project', 'project.management', 'project.management.commands', 'project.templatetags', 'dash', 'dash.tests', 'settings'],
     package_data={
+        'web': [
+            'static/*.*',
+            'static/web/*.*',
+            'static/web/css/*.*',
+            'templates/*.*',
+            'templates/web/*.*',
+        ],
+
         'project': [
             'static/*.*',
             'static/ico/*.*',
@@ -31,24 +39,16 @@ setup(
             'templates/project/*.*',
         ],
 
-        'web': [
-            'static/*.*',
-            'static/web/*.*',
-            'static/web/css/*.*',
-            'templates/*.*',
-            'templates/web/*.*',
-        ],
-
         'dash': [
             'templates/*.*',
             'templates/contact/*.*',
             'templates/dash/*.*',
         ],
     },
-    version='0.1.58',
+    version='0.1.59',
     description='my web site',
-    author='Malcolm Dinsmore',
-    author_email='zebyea@gmail.com',
+    author='Patrick Kimber',
+    author_email='code@pkimber.net',
     url='git@github.com:pkimber/pkimber_net.git',
     classifiers=[
         'Development Status :: 1 - Planning',
