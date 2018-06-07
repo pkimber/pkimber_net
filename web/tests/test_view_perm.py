@@ -6,11 +6,15 @@ from django.urls import reverse
 from base.tests.test_utils import PermTestCase
 from block.models import Page
 from block.tests.factories import PageFactory, TemplateFactory
+from enquiry.models import Enquiry
+from gdpr.tests.factories import ConsentFactory
 
 
 class TestViewPerm(PermTestCase):
 
     def test_contact(self):
+
+        ConsentFactory(slug=Enquiry.GDPR_CONTACT_SLUG)
         PageFactory(
             slug=Page.CUSTOM,
             slug_menu='contact',

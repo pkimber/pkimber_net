@@ -8,7 +8,7 @@ from block.views import (
     PageTemplateView,
 )
 from enquiry.forms import EnquiryForm
-from enquiry.views import Enquiry
+from enquiry.views import EnquiryCreateMixin
 
 
 class CmsHomePageView(CmsMixin, PageTemplateView):
@@ -19,19 +19,15 @@ class CmsHomePageView(CmsMixin, PageTemplateView):
         return context
 
 
-class EnquiryCreateView(CmsMixin, PageFormMixin, CreateView):
+class EnquiryCreateView(
+    EnquiryCreateMixin,
+    CmsMixin,
+    PageFormMixin,
+    CreateView
+    ):
 
-    form_class = EnquiryForm
-    model = Enquiry
-
-    def get_form_kwargs(self):
-        kwargs = super().get_form_kwargs()
-        kwargs.update(dict(
-            request=self.request,
-            user=self.request.user,
-        ))
-        return kwargs
+    """Save an enquiry in the database."""
 
     def get_success_url(self):
-        page = Page.objects.get(slug='contact', slug_menu='thankyou')
+        page = Page.objects.get(slug="contact", slug_menu="thankyou")
         return page.get_absolute_url()
