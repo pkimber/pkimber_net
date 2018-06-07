@@ -7,6 +7,7 @@
 -e ../../app/crm
 -e ../../app/enquiry
 -e ../../app/finance
+-e ../../app/gdpr
 -e ../../app/invoice
 -e ../../app/login
 -e ../../app/mail
@@ -18,5 +19,3 @@ pytest-cov
 pytest-django
 pytest-flakes
 pytest-pep8
-pytest-sugar
-pytest-watch

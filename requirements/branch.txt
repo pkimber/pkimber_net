@@ -1,9 +1,11 @@
 base|master
 block|master
 compose|master
+contact|2953-ember
 crm|master
 enquiry|master
 finance|master
+gdpr|master
 invoice|master
 login|master
 mail|master

@@ -51,8 +51,9 @@ CELERYBEAT_SCHEDULE = {
 }
 
 ELASTIC_APM = {
+    'DISABLE_SEND': get_env_variable_bool('MONITOR_DISABLE_SEND'),
+    'SERVER_URL': get_env_variable('MONITOR_SERVER_URL'),
     'SERVICE_NAME': DATABASE,
-    'SERVER_URL': get_env_variable('ELASTIC_APM_SERVER_URL'),
 }
 
 # FTP upload 'static' folder

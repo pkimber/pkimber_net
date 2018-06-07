@@ -107,13 +107,13 @@ STATICFILES_FINDERS = (
 SECRET_KEY = get_env_variable("SECRET_KEY")
 
 MIDDLEWARE = (
+    'elasticapm.contrib.django.middleware.TracingMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'elasticapm.contrib.django.middleware.TracingMiddleware',
     'reversion.middleware.RevisionMiddleware',
     # 'debug_toolbar.middleware.DebugToolbarMiddleware',
 )
@@ -182,6 +182,7 @@ LOCAL_APPS = (
     'dash',
     'enquiry',
     'finance',
+    'gdpr',
     'invoice',
     'login',
     'mail',
