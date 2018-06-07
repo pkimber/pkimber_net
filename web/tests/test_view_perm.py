@@ -17,27 +17,23 @@ class TestViewPerm(PermTestCase):
         ConsentFactory(slug=Enquiry.GDPR_CONTACT_SLUG)
         PageFactory(
             slug=Page.CUSTOM,
-            slug_menu='contact',
-            template=TemplateFactory(
-                template_name='compose/page_article.html'
-            ),
+            slug_menu="contact",
+            template=TemplateFactory(template_name="compose/page_article.html"),
             is_custom=True,
         )
-        url = reverse('web.contact')
+        url = reverse("web.contact")
         self.assert_any(url)
 
     def test_home(self):
         PageFactory(
             is_home=True,
-            slug='home',
-            slug_menu='',
-            template=TemplateFactory(
-                template_name='compose/page_article.html'
-            ),
+            slug="home",
+            slug_menu="",
+            template=TemplateFactory(template_name="compose/page_article.html"),
         )
-        url = reverse('project.home')
+        url = reverse("project.home")
         self.assert_any(url)
 
     def test_login(self):
-        url = reverse('login')
+        url = reverse("login")
         self.assert_any(url)

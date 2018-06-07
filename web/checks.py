@@ -1,19 +1,16 @@
 # -*- encoding: utf-8 -*-
-from django.core.checks import (
-    register,
-    Tags,
-)
+from django.core.checks import register, Tags
 
 
 @register(Tags.compatibility)
 def example_check(app_configs, **kwargs):
     errors = []
-    #errors.append(Error('an error', id='kb.test'))
-    #errors.extend(_check_middleware_classes(**kwargs))
+    # errors.append(Error('an error', id='kb.test'))
+    # errors.extend(_check_middleware_classes(**kwargs))
     return errors
 
 
-#def _check_middleware_classes(app_configs=None, **kwargs):
+# def _check_middleware_classes(app_configs=None, **kwargs):
 #    """
 #    Checks if the user has *not* overridden the ``MIDDLEWARE_CLASSES`` setting &
 #    warns them about the global default changes.

@@ -7,15 +7,17 @@ from .views import CmsHomePageView, EnquiryCreateView
 
 urlpatterns = [
     # home
-    url(regex=r'^$',
+    url(
+        regex=r"^$",
         view=CmsHomePageView.as_view(),
         kwargs=dict(page=Page.HOME),
-        name='project.home'
-        ),
+        name="project.home",
+    ),
     # contact form
-    url(regex=r'^contact/$',
+    url(
+        regex=r"^contact/$",
         view=EnquiryCreateView.as_view(),
-        kwargs=dict(page=Page.CUSTOM, menu='contact'),
-        name='web.contact'
-        ),
+        kwargs=dict(page=Page.CUSTOM, menu="contact"),
+        name="web.contact",
+    ),
 ]

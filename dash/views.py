@@ -10,29 +10,27 @@ from search.views import SearchViewMixin
 
 
 class ContactDetailView(
-        LoginRequiredMixin, CrmContactDetailMixin, BaseMixin, DetailView):
+    LoginRequiredMixin, CrmContactDetailMixin, BaseMixin, DetailView
+):
     pass
 
 
 class HomeView(
-        LoginRequiredMixin, StaffuserRequiredMixin, BaseMixin, TemplateView):
+    LoginRequiredMixin, StaffuserRequiredMixin, BaseMixin, TemplateView
+):
 
-    template_name = 'dash/home.html'
+    template_name = "dash/home.html"
 
 
-class SearchView(
-        LoginRequiredMixin, StaffuserRequiredMixin, SearchViewMixin):
+class SearchView(LoginRequiredMixin, StaffuserRequiredMixin, SearchViewMixin):
 
-    INDEX_CHOICES = (
-        ('contact', 'Contact'),
-    )
+    INDEX_CHOICES = (("contact", "Contact"),)
 
-    INDEX_CLASSES = {
-        'contact': ContactIndex,
-    }
+    INDEX_CLASSES = {"contact": ContactIndex}
 
 
 class SettingsView(
-        LoginRequiredMixin, StaffuserRequiredMixin, BaseMixin, TemplateView):
+    LoginRequiredMixin, StaffuserRequiredMixin, BaseMixin, TemplateView
+):
 
-    template_name = 'dash/settings.html'
+    template_name = "dash/settings.html"
