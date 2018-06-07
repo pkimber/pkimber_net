@@ -7,7 +7,6 @@ from block.views import (
     PageFormMixin,
     PageTemplateView,
 )
-from enquiry.forms import EnquiryForm
 from enquiry.views import EnquiryCreateMixin
 
 

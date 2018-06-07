@@ -1,7 +1,8 @@
+# -*- encoding: utf-8 -*-
 from .local import *
 
 from kombu import Exchange, Queue
-from .local import *
+
 
 DATABASE = 'dev_www_pkimber_net_malcolm'
 
@@ -15,18 +16,6 @@ DATABASES = {
         'PORT': '',
     }
 }
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': 'temp.db',
-#         'USER': '',
-#         'PASSWORD': '',
-#         'HOST': '',
-#         'PORT': '',
-#     }
-# }
-
 
 # MIDDLEWARE_CLASSES += MIDDLEWARE_CLASSES + (
 #         'debug_toolbar.middleware.DebugToolbarMiddleware',
