@@ -4,7 +4,7 @@ kb-block==0.1.93
 kb-compose==0.0.41
 kb-contact==0.0.34
 kb-crm==0.1.54
-kb-enquiry==0.1.34
+kb-enquiry==0.1.36
 kb-finance==0.1.10
 kb-gdpr==0.0.12
 kb-invoice==0.1.53
