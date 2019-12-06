@@ -2,10 +2,12 @@
 from .base import *
 
 DEBUG = True
-TESTING = False
+TESTING = True
 
 SESSION_COOKIE_SECURE = False
 CSRF_COOKIE_SECURE = False
+
+ELASTIC_APM = {"DISABLE_SEND": True}
 
 # FTP upload 'static' folder
 FTP_STATIC_DIR = None

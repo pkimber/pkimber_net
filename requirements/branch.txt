@@ -1,11 +1,15 @@
 base|master
 block|master
+chat|master
 compose|master
 contact|master
 crm|master
 enquiry|master
 finance|master
+gallery|master
 gdpr|master
+googl_crm|master
+googl|master
 invoice|master
 login|master
 mail|master

@@ -1,0 +1,32 @@
+{% extends 'contact/base.html' %}
+
+{% block sub_title %}
+  Contacts
+{% endblock sub_title %}
+
+{% block sub_heading %}
+  Contacts
+{% endblock sub_heading %}
+
+{% block content %}
+  <div class="pure-g">
+    <div class="pure-u-1">
+      <div class="pure-menu pure-menu-horizontal">
+        <ul class="pure-menu-list">
+          {% include 'base/_paginate.html' %}
+          <li class="pure-menu-item">
+            <a href="{% url 'contact.create' %}" class="pure-menu-link">
+              <i class="fa fa-plus"></i>
+              New contact
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="pure-g">
+    <div class="pure-u-1">
+      {% include 'contact/_contact_list.html' %}
+    </div>
+  </div>
+{% endblock content %}

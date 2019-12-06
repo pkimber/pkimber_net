@@ -105,7 +105,7 @@ STATICFILES_FINDERS = (
 SECRET_KEY = get_env_variable("SECRET_KEY")
 
 MIDDLEWARE = (
-    "elasticapm.contrib.django.middleware.TracingMiddleware",
+    # "elasticapm.contrib.django.middleware.TracingMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -161,7 +161,7 @@ THIRD_PARTY_APPS = (
     # 'django_extensions',
     # 'debug_toolbar',
     "easy_thumbnails",
-    "elasticapm.contrib.django",
+    # "elasticapm.contrib.django",
     "mptt",
     "rest_framework",
     # http://www.django-rest-framework.org/api-guide/authentication#tokenauthentication
@@ -174,13 +174,17 @@ THIRD_PARTY_APPS = (
 LOCAL_APPS = (
     "base",
     "block",
+    "chat",
     "compose",
     "contact",
     "crm",
     "dash",
     "enquiry",
     "finance",
+    "gallery",
     "gdpr",
+    "googl",
+    "googl_crm",
     "invoice",
     "login",
     "mail",

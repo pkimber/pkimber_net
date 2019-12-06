@@ -2,12 +2,16 @@
 -e .
 -e git+https://gitlab.com/kb/base.git#egg=base
 -e git+https://gitlab.com/kb/block.git#egg=block
+-e git+https://gitlab.com/kb/chat.git#egg=chat
 -e git+https://gitlab.com/kb/compose.git#egg=compose
 -e git+https://gitlab.com/kb/contact.git#egg=contact
 -e git+https://gitlab.com/kb/crm.git#egg=crm
 -e git+https://gitlab.com/kb/enquiry.git#egg=enquiry
 -e git+https://gitlab.com/kb/finance.git#egg=finance
+-e git+https://gitlab.com/kb/gallery.git#egg=gallery
 -e git+https://gitlab.com/kb/gdpr.git#egg=gdpr
+-e git+https://gitlab.com/kb/googl.git#egg=googl
+-e git+https://gitlab.com/kb/googl_crm.git#egg=googl_crm
 -e git+https://gitlab.com/kb/invoice.git#egg=invoice
 -e git+https://gitlab.com/kb/login.git#egg=login
 -e git+https://gitlab.com/kb/mail.git#egg=mail

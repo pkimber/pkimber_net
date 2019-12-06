@@ -2,12 +2,16 @@
 -e .
 -e ../../app/base
 -e ../../app/block
+-e ../../app/chat
 -e ../../app/compose
 -e ../../app/contact
 -e ../../app/crm
 -e ../../app/enquiry
 -e ../../app/finance
+-e ../../app/gallery
 -e ../../app/gdpr
+-e ../../app/googl
+-e ../../app/googl_crm
 -e ../../app/invoice
 -e ../../app/login
 -e ../../app/mail
@@ -15,6 +19,7 @@
 -e ../../app/search
 -e ../../app/stock
 black
+django-debug-toolbar
 factory-boy
 GitPython
 pytest-cov
