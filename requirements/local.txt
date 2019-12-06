@@ -14,8 +14,9 @@
 -e ../../app/report
 -e ../../app/search
 -e ../../app/stock
+black
 factory-boy
+GitPython
 pytest-cov
 pytest-django
 pytest-flakes
-pytest-pep8

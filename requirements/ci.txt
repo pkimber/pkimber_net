@@ -1,0 +1,23 @@
+-r base.txt
+-e .
+-e git+https://gitlab.com/kb/base.git#egg=base
+-e git+https://gitlab.com/kb/block.git#egg=block
+-e git+https://gitlab.com/kb/compose.git#egg=compose
+-e git+https://gitlab.com/kb/contact.git#egg=contact
+-e git+https://gitlab.com/kb/crm.git#egg=crm
+-e git+https://gitlab.com/kb/enquiry.git#egg=enquiry
+-e git+https://gitlab.com/kb/finance.git#egg=finance
+-e git+https://gitlab.com/kb/gdpr.git#egg=gdpr
+-e git+https://gitlab.com/kb/invoice.git#egg=invoice
+-e git+https://gitlab.com/kb/login.git#egg=login
+-e git+https://gitlab.com/kb/mail.git#egg=mail
+-e git+https://gitlab.com/kb/report.git#egg=report
+-e git+https://gitlab.com/kb/search.git#egg=search
+-e git+https://gitlab.com/kb/stock.git#egg=stock
+django-debug-toolbar
+pytest-cov
+pytest-django
+pytest-flakes
+pytest
+python2-secrets==1.0.5
+responses
