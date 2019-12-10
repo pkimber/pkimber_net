@@ -11,7 +11,7 @@ gdpr|master
 googl_crm|master
 googl|master
 invoice|master
-login|master
+login|4645-ember-workflow
 mail|master
 report|master
 search|master

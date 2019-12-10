@@ -13,7 +13,7 @@
 -e git+https://gitlab.com/kb/googl.git#egg=googl
 -e git+https://gitlab.com/kb/googl_crm.git#egg=googl_crm
 -e git+https://gitlab.com/kb/invoice.git#egg=invoice
--e git+https://gitlab.com/kb/login.git#egg=login
+-e git+https://gitlab.com/kb/login.git@4645-ember-workflow#egg=login
 -e git+https://gitlab.com/kb/mail.git#egg=mail
 -e git+https://gitlab.com/kb/report.git#egg=report
 -e git+https://gitlab.com/kb/search.git#egg=search
