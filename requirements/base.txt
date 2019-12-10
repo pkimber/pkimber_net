@@ -18,6 +18,7 @@ elastic-apm==5.2.3
 elasticsearch==6.4.0
 google-api-python-client==1.7.11
 google-auth==1.7.2
+mozilla-django-oidc==1.2.2
 Pillow==6.2.0
 psycopg2==2.8.3
 python-dateutil==2.8.0

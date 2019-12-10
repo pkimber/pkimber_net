@@ -220,6 +220,21 @@ LOGIN_REDIRECT_URL = reverse_lazy("crm.ticket.home")
 # will be called.
 # LOGIN_URL = reverse_lazy('login.login')
 
+# https://mozilla-django-oidc.readthedocs.io/
+USE_OPENID_CONNECT = get_env_variable_bool("USE_OPENID_CONNECT")
+AUTHENTICATION_BACKENDS = ("login.service.KBSoftwareOIDCAuthenticationBackend",)
+OIDC_CREATE_USER = False
+OIDC_OP_AUTHORIZATION_ENDPOINT = get_env_variable(
+    "OIDC_OP_AUTHORIZATION_ENDPOINT"
+)
+OIDC_OP_JWKS_ENDPOINT = get_env_variable("OIDC_OP_JWKS_ENDPOINT")
+OIDC_OP_TOKEN_ENDPOINT = get_env_variable("OIDC_OP_TOKEN_ENDPOINT")
+OIDC_OP_USER_ENDPOINT = "NOT_USED_BY_KB_LOGIN_SERVICE"
+OIDC_RP_CLIENT_ID = get_env_variable("OIDC_RP_CLIENT_ID")
+OIDC_RP_CLIENT_SECRET = get_env_variable("OIDC_RP_CLIENT_SECRET")
+OIDC_RP_SIGN_ALGO = get_env_variable("OIDC_RP_SIGN_ALGO")
+OIDC_USE_NONCE = get_env_variable_bool("OIDC_USE_NONCE")
+
 # https://github.com/praekelt/django-recaptcha
 NOCAPTCHA = True
 RECAPTCHA_PUBLIC_KEY = get_env_variable("NORECAPTCHA_SITE_KEY")

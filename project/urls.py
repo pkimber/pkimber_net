@@ -32,6 +32,7 @@ urlpatterns = [
     url(regex=r"^dash/", view=include("dash.urls")),
     url(regex=r"^enquiry/", view=include("enquiry.urls")),
     url(regex=r"^invoice/", view=include("invoice.urls")),
+    url(regex=r"^oidc/", view=include("mozilla_django_oidc.urls")),
     url(regex=r"^search/", view=include("search.urls")),
     url(regex=r"^sitemap\.xml$", view=sitemap, kwargs={"sitemaps": sitemaps}),
     url(regex=r"^token/$", view=views.obtain_auth_token, name="api.token.auth"),
