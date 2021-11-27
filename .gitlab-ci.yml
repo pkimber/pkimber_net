@@ -1,0 +1,27 @@
+services:
+  - postgres:10.5
+
+test:
+  script:
+  - export DATABASE_HOST=postgres
+  - export DATABASE_PASS=
+  - export DATABASE_PORT=
+  - export DATABASE_USER=postgres
+  - export DOMAIN=dev
+  - export ELASTICSEARCH_HOST="localhost"
+  - export ELASTICSEARCH_PORT="9200"
+  - export HOST_NAME="http://localhost:8000"
+  - export LOG_FOLDER=
+  - export LOG_SUFFIX=dev
+  - export MAIL_TEMPLATE_TYPE="django"
+  - export NORECAPTCHA_SECRET_KEY="your-recaptcha-secret-key"
+  - export NORECAPTCHA_SITE_KEY="your-recaptcha-site-key"
+  - export RAYGUN4PY_API_KEY="my-raygun-api-key"
+  - export SECRET_KEY="sk_test"
+  - export SPARKPOST_API_KEY="sparkpost_api_key_test"
+  - export USE_OPENID_CONNECT=False
+  - pip3 install -r requirements/ci.txt -i https://pypi.kbsoftware.co.uk/kb/dev/+simple/
+  - pytest --create-db --cov-report term --cov=dash --cov=project
+
+variables:
+  POSTGRES_HOST_AUTH_METHOD: trust

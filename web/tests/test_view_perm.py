@@ -11,7 +11,6 @@ from gdpr.tests.factories import ConsentFactory
 
 
 class TestViewPerm(PermTestCase):
-
     def test_contact(self):
 
         ConsentFactory(slug=Enquiry.GDPR_CONTACT_SLUG)

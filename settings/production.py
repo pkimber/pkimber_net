@@ -11,50 +11,39 @@ if get_env_variable_bool("SSL"):
 ALLOWED_HOSTS = [get_env_variable("ALLOWED_HOSTS")]
 
 DOMAIN = get_env_variable("DOMAIN")
-DATABASE = DOMAIN.replace(".", "_")
-
+DATABASE_NAME = DOMAIN.replace(".", "_").replace("-", "_")
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "NAME": DATABASE,
-        "USER": DATABASE,
+        "NAME": DATABASE_NAME,
+        "USER": DATABASE_NAME,
         "PASSWORD": get_env_variable("DB_PASS"),
         "HOST": get_env_variable("DB_IP"),
         "PORT": "",
     }
 }
 
-# Celery
-from kombu import Exchange, Queue
-
-# transport
-BROKER_URL = "redis://localhost:6379/0"
-CELERY_RESULT_BACKEND = "redis://localhost:6379/0"
-# number of worker processes (will be 3 == controller, worker and beat)
-CELERYD_CONCURRENCY = 1
-# rate limits
-CELERY_DISABLE_RATE_LIMITS = True
-# serializer
-CELERY_TASK_SERIALIZER = "json"
-CELERY_ACCEPT_CONTENT = ["json"]
-# queue
-CELERY_DEFAULT_QUEUE = DATABASE
-CELERY_QUEUES = (Queue(DATABASE, Exchange(DATABASE), routing_key=DATABASE),)
-
-from celery.schedules import crontab
-
-CELERYBEAT_SCHEDULE = {
-    "update_search_index": {
-        "task": "search.tasks.update_search_index",
-        "schedule": crontab(minute="15", hour="*/1"),
-    }
+REDIS_HOST = get_env_variable("REDIS_HOST")
+REDIS_PORT = get_env_variable("REDIS_PORT")
+# https://dramatiq.io/reference.html#middleware
+DRAMATIQ_BROKER = {
+    "BROKER": "dramatiq.brokers.redis.RedisBroker",
+    "OPTIONS": {"url": "redis://{}:{}/0".format(REDIS_HOST, REDIS_PORT)},
+    "MIDDLEWARE": [
+        # drops messages that have been in the queue for too long
+        "dramatiq.middleware.AgeLimit",
+        # cancels actors that run for too long
+        "dramatiq.middleware.TimeLimit",
+        # lets you chain success and failure callbacks
+        "dramatiq.middleware.Callbacks",
+        # automatically retries failed tasks with exponential backoff
+        "dramatiq.middleware.Retries",
+    ],
 }
-
-ELASTIC_APM = {
-    "DISABLE_SEND": get_env_variable_bool("MONITOR_DISABLE_SEND"),
-    "SERVER_URL": get_env_variable("MONITOR_SERVER_URL"),
-    "SERVICE_NAME": DATABASE,
-}
+# KB Software queue name (to allow multiple sites on one server)
+# KB Software queue name (to allow multiple sites on one server)
+DRAMATIQ_QUEUE_NAME = DATABASE_NAME
+DRAMATIQ_QUEUE_NAME_PIPELINE = DATABASE_NAME
 
 # FTP upload 'static' folder
 FTP_STATIC_DIR = None

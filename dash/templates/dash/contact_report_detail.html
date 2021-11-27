@@ -1,0 +1,30 @@
+{% extends 'dash/base.html' %}
+
+{% block sub_title %}
+  Contact Reports
+{% endblock sub_title %}
+
+{% block sub_heading %}
+  {{ contact.get_full_name }}
+{% endblock sub_heading %}
+
+{% block content %}
+  <div class="pure-g">
+    <div class="pure-u-1">
+      <div class="pure-menu pure-menu-horizontal">
+        <ul class="pure-menu-list">
+          {% if next %}
+            <li class="pure-menu-item">
+              <a href="{{ next }}" class="pure-menu-link">
+                <i class="fa fa-reply"></i>
+              </a>
+            </li>
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="pure-g">
+    {% include 'invoice/_contact_reports.html' %}
+  </div>
+{% endblock content %}

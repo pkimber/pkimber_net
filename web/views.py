@@ -7,7 +7,6 @@ from enquiry.views import EnquiryCreateMixin
 
 
 class CmsHomePageView(CmsMixin, PageTemplateView):
-
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context.update(dict(twitter="pkimber"))

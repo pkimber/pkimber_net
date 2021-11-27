@@ -1,0 +1,27 @@
+-r base.txt
+-e .
+-e git+https://gitlab.com/kb/base.git#egg=kb-base
+-e git+https://gitlab.com/kb/block.git#egg=kb-block
+-e git+https://gitlab.com/kb/chat.git#egg=kb-chat
+-e git+https://gitlab.com/kb/compose.git#egg=kb-compose
+-e git+https://gitlab.com/kb/contact.git#egg=kb-contact
+-e git+https://gitlab.com/kb/crm.git#egg=kb-crm
+-e git+https://gitlab.com/kb/enquiry.git#egg=kb-enquiry
+-e git+https://gitlab.com/kb/finance.git#egg=kb-finance
+-e git+https://gitlab.com/kb/gallery.git#egg=kb-gallery
+-e git+https://gitlab.com/kb/gdpr.git#egg=kb-gdpr
+-e git+https://gitlab.com/kb/googl.git#egg=kb-googl
+-e git+https://gitlab.com/kb/googl_crm.git#egg=kb-googl_crm
+-e git+https://gitlab.com/kb/invoice.git#egg=kb-invoice
+-e git+https://gitlab.com/kb/login.git#egg=kb-login
+-e git+https://gitlab.com/kb/mail.git#egg=kb-mail
+-e git+https://gitlab.com/kb/report.git#egg=kb-report
+-e git+https://gitlab.com/kb/search.git#egg=kb-search
+-e git+https://gitlab.com/kb/stock.git#egg=kb-stock
+django-debug-toolbar
+factory-boy
+httmock
+pytest-cov
+pytest-django
+pytest-flakes
+pytest-mock

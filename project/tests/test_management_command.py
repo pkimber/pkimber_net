@@ -13,7 +13,6 @@ from project.management.commands import init_project
 
 
 class TestManagementCommand(TestCase):
-
     def test_init_project(self):
         """Test the management command."""
         pre_command = init_app_block.Command()

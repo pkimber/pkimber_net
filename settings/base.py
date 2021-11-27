@@ -105,7 +105,6 @@ STATICFILES_FINDERS = (
 SECRET_KEY = get_env_variable("SECRET_KEY")
 
 MIDDLEWARE = (
-    "elasticapm.contrib.django.middleware.TracingMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -150,18 +149,15 @@ DJANGO_APPS = (
     "django.contrib.messages",
     "django.contrib.sitemaps",
     "django.contrib.staticfiles",
-    # Uncomment the next line to enable admin documentation:
-    # 'django.contrib.admindocs',
-    # admin after login, so we prefer login templates
-    "django.contrib.admin",
 )
 
 THIRD_PARTY_APPS = (
+    # add django_dramatiq to installed apps before any of your custom apps
+    "django_dramatiq",
     "captcha",
     # 'django_extensions',
     # 'debug_toolbar',
     "easy_thumbnails",
-    "elasticapm.contrib.django",
     "mptt",
     "rest_framework",
     # http://www.django-rest-framework.org/api-guide/authentication#tokenauthentication
@@ -174,13 +170,17 @@ THIRD_PARTY_APPS = (
 LOCAL_APPS = (
     "base",
     "block",
+    "chat",
     "compose",
     "contact",
     "crm",
     "dash",
     "enquiry",
     "finance",
+    "gallery",
     "gdpr",
+    "googl",
+    "googl_crm",
     "invoice",
     "login",
     "mail",
@@ -194,6 +194,8 @@ LOCAL_APPS = (
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
 CONTACT_MODEL = "contact.Contact"
+
+DEFAULT_AUTO_FIELD = "django.db.models.AutoField"
 
 DEFAULT_FROM_EMAIL = "web@pkimber.net"
 
@@ -233,6 +235,9 @@ REST_FRAMEWORK = {
     "TEST_REQUEST_DEFAULT_FORMAT": "json",
 }
 
+# https://mozilla-django-oidc.readthedocs.io/
+USE_OPENID_CONNECT = get_env_variable_bool("USE_OPENID_CONNECT")
+
 LOGGING = {
     "version": 1,
     "disable_existing_loggers": True,
@@ -243,12 +248,17 @@ LOGGING = {
         }
     },
     "handlers": {
-        "null": {"level": "DEBUG", "class": "logging.NullHandler"},
         "logfile": {
             "level": "DEBUG",
             "class": "logging.handlers.RotatingFileHandler",
-            "filename": "logger.log",
-            "maxBytes": 500000,
+            "filename": os.path.join(
+                get_env_variable("LOG_FOLDER"),
+                "{}-{}-logger.log".format(
+                    get_env_variable("DOMAIN").replace("_", "-"),
+                    get_env_variable("LOG_SUFFIX"),
+                ),
+            ),
+            "maxBytes": 100000000,
             "backupCount": 10,
             "formatter": "standard",
         },

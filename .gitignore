@@ -39,6 +39,7 @@ nosetests.xml
 # dev
 .cache
 .pytest_cache/
+/kb.py
 logger.*
 media
 media-private

@@ -9,7 +9,6 @@ from .models import Main
 
 
 class MainForm(RequiredFieldForm):
-
     def __init__(self, *args, **kwargs):
         super(MainForm, self).__init__(*args, **kwargs)
         for name in ("title", "description", "url"):
