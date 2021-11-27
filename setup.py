@@ -45,7 +45,7 @@ setup(
             'templates/dash/*.*',
         ],
     },
-    version='0.1.62',
+    version='0.1.63',
     description='my web site',
     author='Patrick Kimber',
     author_email='patrick@kbsoftware.co.uk',
