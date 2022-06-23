@@ -26,11 +26,13 @@ class ContactDetailTicketListView(
     def test_contact(self):
         return self._contact()
 
+
 class ContactReportDetailView(
     LoginRequiredMixin, StaffuserRequiredMixin, BaseMixin, DetailView
 ):
     model = Contact
     template_name = "dash/contact_report_detail.html"
+
 
 class HomeView(
     LoginRequiredMixin, StaffuserRequiredMixin, BaseMixin, TemplateView

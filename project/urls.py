@@ -1,6 +1,6 @@
 # -*- encoding: utf-8 -*-
 from django.conf import settings
-from django.conf.urls import include, url
+from django.urls import include, re_path
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.contrib.sitemaps import GenericSitemap
@@ -19,22 +19,22 @@ sitemaps = {
 
 
 urlpatterns = [
-    url(regex=r"^", view=include("login.urls")),
-    url(regex=r"^api/0.1/", view=include("crm.urls_api")),
-    url(regex=r"^block/", view=include("block.urls.block")),
-    url(regex=r"^compose/", view=include("compose.urls.compose")),
-    url(regex=r"^contact/", view=include("contact.urls")),
-    url(regex=r"^crm/", view=include("crm.urls")),
-    url(regex=r"^dash/", view=include("dash.urls")),
-    url(regex=r"^enquiry/", view=include("enquiry.urls")),
-    url(regex=r"^invoice/", view=include("invoice.urls")),
-    url(regex=r"^search/", view=include("search.urls")),
-    url(regex=r"^sitemap\.xml$", view=sitemap, kwargs={"sitemaps": sitemaps}),
-    url(regex=r"^token/$", view=views.obtain_auth_token, name="api.token.auth"),
-    url(regex=r"^wizard/", view=include("block.urls.wizard")),
-    url(regex=r"^", view=include("web.urls")),
+    re_path(r"^", view=include("login.urls")),
+    re_path(r"^api/0.1/", view=include("crm.urls_api")),
+    re_path(r"^block/", view=include("block.urls.block")),
+    re_path(r"^compose/", view=include("compose.urls.compose")),
+    re_path(r"^contact/", view=include("contact.urls")),
+    re_path(r"^crm/", view=include("crm.urls")),
+    re_path(r"^dash/", view=include("dash.urls")),
+    re_path(r"^enquiry/", view=include("enquiry.urls")),
+    re_path(r"^invoice/", view=include("invoice.urls")),
+    re_path(r"^search/", view=include("search.urls")),
+    re_path(r"^sitemap\.xml$", view=sitemap, kwargs={"sitemaps": sitemaps}),
+    re_path(r"^token/$", view=views.obtain_auth_token, name="api.token.auth"),
+    re_path(r"^wizard/", view=include("block.urls.wizard")),
+    re_path(r"^", view=include("web.urls")),
     # this url include should come last
-    url(regex=r"^", view=include("block.urls.cms")),
+    re_path(r"^", view=include("block.urls.cms")),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
@@ -45,5 +45,5 @@ if settings.DEBUG:
     import debug_toolbar
 
     urlpatterns = [
-        url(r"^__debug__/", include(debug_toolbar.urls))
+        re_path(r"^__debug__/", include(debug_toolbar.urls))
     ] + urlpatterns
