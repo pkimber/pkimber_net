@@ -1,20 +1,20 @@
 -r base.txt
-kb-base==0.3.24
-kb-block==0.3.28
-kb-chat==0.0.10
-kb-compose==0.1.25
-kb-contact==0.0.68
-kb-crm==0.1.76
-kb-enquiry==0.1.45
-kb-finance==0.1.17
-kb-gallery==0.0.13
-kb-gdpr==0.0.32
-kb-googl==0.0.05
-kb-googl-crm==0.0.04
-kb-invoice==0.2.10
+kb-base==0.3.26
+kb-block==0.3.29
+kb-chat==0.0.11
+kb-compose==0.1.26
+kb-contact==0.0.69
+kb-crm==0.1.77
+kb-enquiry==0.1.46
+kb-finance==0.1.19
+kb-gallery==0.0.14
+kb-gdpr==0.0.33
+kb-googl==0.0.06
+kb-googl-crm==0.0.05
+kb-invoice==0.2.11
 kb-login==0.2.31
 kb-mail==0.1.86
 kb-report==0.0.70
-kb-search==0.1.39
+kb-search==0.1.40
 kb-stock==0.1.39
 
