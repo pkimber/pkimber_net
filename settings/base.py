@@ -213,6 +213,9 @@ SPARKPOST_OPTIONS = {
 # view gets no next parameter.
 LOGIN_REDIRECT_URL = reverse_lazy("crm.ticket.home")
 
+ELASTICSEARCH_HOST = "localhost"
+ELASTICSEARCH_PORT = 9200
+
 # Login URL. Used with login_required decorators when a user
 # must be logged in before accessing the view otherwise this URL
 # will be called.
