@@ -21,8 +21,8 @@ MEDIA_ROOT = "media"
 # Django debug toolbar (this is the address of the client not the server)
 # INTERNAL_IPS = ('127.0.0.1',)
 
-# https://github.com/johnsensible/django-sendfile
-SENDFILE_BACKEND = "sendfile.backends.development"
-SENDFILE_ROOT = "media-private"
+# https://django-sendfile2.readthedocs.io/en/
+SENDFILE_BACKEND = "django_sendfile.backends.development"
+SENDFILE_ROOT = BASE_DIR / "media-private"
 
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"

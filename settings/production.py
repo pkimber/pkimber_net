@@ -53,8 +53,8 @@ FTP_STATIC_URL = None
 # Example: "/home/media/media.lawrence.com/media/"
 MEDIA_ROOT = get_env_variable("MEDIA_ROOT")
 
-# https://github.com/johnsensible/django-sendfile
-SENDFILE_BACKEND = "sendfile.backends.nginx"
+# https://django-sendfile2.readthedocs.io/en/latest/backends.html#nginx-backend
+SENDFILE_BACKEND = "django_sendfile.backends.nginx"
 SENDFILE_ROOT = get_env_variable("SENDFILE_ROOT")
 SENDFILE_URL = "/private"
 
