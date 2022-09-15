@@ -24,8 +24,6 @@ factory-boy
 GitPython
 pytest-cov
 pytest-django
-pytest-flakes
-pytest-pep8
 responses
 rich
 semantic-version

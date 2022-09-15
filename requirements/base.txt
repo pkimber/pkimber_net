@@ -8,10 +8,10 @@ django-dramatiq==0.10.0
 django-extensions==3.1.5
 django-mptt==0.13.4
 django-recaptcha==3.0.0
-django-reversion==5.0.0
+django-reversion==5.0.2
 django-sendfile2==0.6.1
 django-taggit==3.0.0
-Django==4.0.5
+Django==4.1.1
 djangorestframework==3.13.1
 dramatiq[redis, watch]==1.13.0
 easy-thumbnails==2.8.1
