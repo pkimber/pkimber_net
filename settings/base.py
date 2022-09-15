@@ -225,9 +225,10 @@ ELASTICSEARCH_PORT = 9200
 # LOGIN_URL = reverse_lazy('login.login')
 
 # https://github.com/praekelt/django-recaptcha
-NOCAPTCHA = True
 RECAPTCHA_PUBLIC_KEY = get_env_variable("NORECAPTCHA_SITE_KEY")
 RECAPTCHA_PRIVATE_KEY = get_env_variable("NORECAPTCHA_SECRET_KEY")
+# https://github.com/torchbox/django-recaptcha#recaptcha-v3-score
+RECAPTCHA_REQUIRED_SCORE = 0.85
 
 # http://www.django-rest-framework.org/api-guide/authentication#tokenauthentication
 REST_FRAMEWORK = {
