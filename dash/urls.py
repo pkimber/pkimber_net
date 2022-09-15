@@ -3,6 +3,7 @@ from django.urls import re_path
 
 from .views import (
     ContactDetailTicketListView,
+    ContactListView,
     ContactReportDetailView,
     HomeView,
     SearchView,
@@ -11,6 +12,7 @@ from .views import (
 
 
 urlpatterns = [
+    re_path(r"^contact/$", view=ContactListView.as_view(), name="contact.list"),
     re_path(
         r"^contact/(?P<pk>\d+)/$",
         view=ContactDetailTicketListView.as_view(),

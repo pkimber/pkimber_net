@@ -17,6 +17,12 @@ def test_contact_detail(perm_check):
 
 
 @pytest.mark.django_db
+def test_contact_list(perm_check):
+    url = reverse("contact.list")
+    perm_check.staff(url)
+
+
+@pytest.mark.django_db
 def test_dash(perm_check):
     url = reverse("project.dash")
     perm_check.staff(url)

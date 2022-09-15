@@ -6,7 +6,7 @@ from braces.views import LoginRequiredMixin, StaffuserRequiredMixin
 from base.view_utils import BaseMixin, RedirectNextMixin
 from contact.models import Contact
 from contact.search import ContactIndex
-from contact.views import ContactPermMixin
+from contact.views import ContactListMixin, ContactPermMixin
 from crm.views import ContactTicketListMixin
 from search.views import SearchViewMixin
 
@@ -25,6 +25,16 @@ class ContactDetailTicketListView(
 
     def test_contact(self):
         return self._contact()
+
+
+class ContactListView(
+    LoginRequiredMixin,
+    StaffuserRequiredMixin,
+    ContactListMixin,
+    BaseMixin,
+    ListView,
+):
+    template_name = "dash/contact_list.html"
 
 
 class ContactReportDetailView(
