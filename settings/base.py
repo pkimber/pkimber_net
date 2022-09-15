@@ -8,6 +8,7 @@ import os
 # settings, but 'ImproperlyConfigured' is an exception.
 from django.core.exceptions import ImproperlyConfigured
 from django.urls import reverse_lazy
+from pathlib import Path
 
 
 def get_env_variable(key):
@@ -41,6 +42,8 @@ def get_env_variable_bool(key):
         raise ImproperlyConfigured(error_msg)
     return result
 
+
+BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 
 # We use the 'SITE_NAME' for the name of the database and the name of the
 # cloud files container.
