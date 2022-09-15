@@ -18,6 +18,7 @@ end
 
 set -x ALLOWED_HOSTS "abc,xyz"
 set -x DATABASE_NAME "dev_www_pkimber_net_$USER"
+set -x DATABASE_USER "postgres"
 set -x DJANGO_SETTINGS_MODULE "settings.dev_patrick"
 set -x DOMAIN "www.pkimber.net"
 set -x HOST_NAME "http://localhost:8000"
@@ -32,10 +33,11 @@ set -x USE_OPENID_CONNECT "False"
 
 source .private.fish
 
-echo "DATABASE_NAME:" $DATABASE_NAME
 echo "DATABASE_HOST:" $DATABASE_HOST
+echo "DATABASE_NAME:" $DATABASE_NAME
 echo "DATABASE_PASS:" $DATABASE_PASS
 echo "DATABASE_PORT:" $DATABASE_PORT
+echo "DATABASE_USER:" $DATABASE_USER
 echo "DJANGO_SETTINGS_MODULE": $DJANGO_SETTINGS_MODULE
 echo "REDIS_HOST:" $REDIS_HOST
 echo "REDIS_PORT:" $REDIS_PORT
