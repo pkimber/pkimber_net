@@ -8,9 +8,6 @@
     <a href="/howto/" class="pure-menu-link">My Memory</a>
   </li>
   {% if user.is_authenticated %}
-    <li class="pure-menu-item">
-      <a href="{% url 'crm.ticket.home' %}" class="pure-menu-link">CRM</a>
-    </li>
     <li class="pure-menu-item{% if 'search' in path %} pure-menu-selected{% endif %}">
       <a href="{% url 'project.search' %}" class="pure-menu-link">Search</a>
     </li>
