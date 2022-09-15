@@ -39,13 +39,13 @@ nosetests.xml
 # dev
 .cache
 .pytest_cache/
+/*logger.*
 /kb.py
-logger.*
-media
-media-private
-temp.db
-venv-*
-web_static
+/media
+/media-private
+/temp.db
+/venv-*
+/web_static
 
 # private info
-.private
+/.private.fish

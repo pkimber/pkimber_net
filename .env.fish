@@ -30,7 +30,7 @@ set -x SECRET_KEY "the_secret_key"
 set -x SPARKPOST_API_KEY "your-api-key"
 set -x USE_OPENID_CONNECT "False"
 
-source .private
+source .private.fish
 
 echo "DATABASE_NAME:" $DATABASE_NAME
 echo "DATABASE_HOST:" $DATABASE_HOST
