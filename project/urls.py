@@ -29,6 +29,7 @@ urlpatterns = [
     re_path(r"^enquiry/", view=include("enquiry.urls")),
     re_path(r"^gdpr/", view=include("gdpr.urls")),
     re_path(r"^invoice/", view=include("invoice.urls")),
+    re_path(r"^mail/", view=include("mail.urls")),
     re_path(r"^search/", view=include("search.urls")),
     re_path(r"^sitemap\.xml$", view=sitemap, kwargs={"sitemaps": sitemaps}),
     re_path(r"^token/$", view=views.obtain_auth_token, name="api.token.auth"),
