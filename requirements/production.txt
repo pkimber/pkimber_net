@@ -5,7 +5,7 @@ kb-chat==0.0.11
 kb-compose==0.1.26
 kb-contact==0.0.69
 kb-crm==0.1.78
-kb-enquiry==0.1.48
+kb-enquiry==0.1.49
 kb-finance==0.1.19
 kb-gallery==0.0.14
 kb-gdpr==0.0.33
